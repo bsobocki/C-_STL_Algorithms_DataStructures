@@ -4,12 +4,12 @@ Function for sorting _containers_ in the range \[first, last\).
 
 ---  
 ## *Table Of Contents*
-### *[Algorithm](#algorithm)*  
-   - [Implementation](#implementation)  
-   - [Complexity](#complexity)   
-### *[Prototype](#prototype)*  
-### *[Examples of use](#examples-of-use)*   
-   - [Array](#array) 
+   - *__[Algorithm](#algorithm)__*  
+      - [Implementation](#implementation)  
+      - [Complexity](#complexity)   
+   - *__[Prototype](#prototype)__*  
+   - *__[Examples of use](#examples-of-use)__*   
+      - [Array](#array) 
    
 ---  
 
