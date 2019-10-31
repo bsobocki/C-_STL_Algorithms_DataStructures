@@ -1,7 +1,20 @@
 # std::sort
-Function for sorting _containers_ in the range \[first, last\).
+Function for sorting _containers_ in the range \[first, last\).  
 
-## Algorithm - Quick Sort
+
+---  
+# *Table Of Contents*
+---  
+### *[Algorithm](#algorithm)*  
+   - [Implementation](#implementation)  
+   - [Complexity](#complexity)   
+### *[Prototype](#prototype)*  
+### *[Examples of use](#examples-of-use)*   
+   - [Array](#array) 
+   
+---  
+
+## Algorithm
 
 ### Implementation
 This function is implemented as [QuickSort](https://www.geeksforgeeks.org/quick-sort/).  
@@ -15,7 +28,7 @@ Complexity: *`O(N*log(N))`* where *`N`* is the number of elements in the contain
 **sort**(*startadress, endadress, function_to_compare_elements*);  
 
 ## Examples of use
-___Array___ :  
+### *Array* 
 ```
 int array1 [] = { 5, 7, 9, 0, 3, 1, 2 };  
 int array2 [] = { 5, 7, 9, 0, 3, 1, 2 };  
