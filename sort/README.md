@@ -9,9 +9,10 @@ This function is implemented as [QuickSort](https://www.geeksforgeeks.org/quick-
 ### Complexity
 Complexity: *`O(N*log(N))`* where *`N`* is the number of elements in the container.
 
-## Prototype
-**sort**(*startadress, endardess*)
-**sort**(*startadress, endadress, function_to_compare_elements*)
+## Prototype  
+
+**sort**(*startadress, endardess*);  
+**sort**(*startadress, endadress, function_to_compare_elements*);  
 
 ## Examples of use
 ___Array___ :  
