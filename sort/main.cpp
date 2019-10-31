@@ -9,25 +9,27 @@ void show(const int array [], std::size_t size);
 int main() {
     int arr [] = { 4, 6, 3, 8, 0, 5, 8, 0, 2, 1, 8, 6};
     int arr2 [] = { 4, 6, 3, 8, 0, 5, 8, 0, 2, 1, 8, 6};
+    int * arr2_ptr = arr2;
+    int array_size = sizeof(arr)/sizeof(arr[0]);
     std::array<int, 8> array = {3, 4, 1, 9, 0 ,5 ,2, 8};
     std::array<int,8> array2 = array;
     std::array<int, 8> array3 = array;
     std::array<int, 8> array4 = array;
 
-    std::cout<<"Array before sorting: "; show(arr, sizeof(arr)/sizeof(arr[0]));
+    std::cout<<"Array before sorting: "; show(arr, array_size);
 
     std::sort(
             arr,
-            arr + sizeof(arr)/sizeof(arr[0]));
+            arr + array_size);
 
-    std::cout<<"Array after sorting without giving function to compare: "; show(arr, sizeof(arr)/sizeof(arr[0]));
+    std::cout<<"Array after sorting without giving function to compare: "; show(arr, array_size);
 
     std::sort(
-            arr2,
-            arr2 + sizeof(arr2)/sizeof(arr2[0]),
+            arr2_ptr,
+            arr2_ptr + array_size,
             std::less<>());
 
-    std::cout<<"Array after sorting with 'std::less<>()': "; show(arr2, sizeof(arr2)/sizeof(arr2[0]));
+    std::cout<<"Array after sorting with 'std::less<>()': "; show(arr2_ptr, array_size);
 
     std::cout<<"\n####\n"<<std::endl;
 
