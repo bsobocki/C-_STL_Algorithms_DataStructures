@@ -1,5 +1,5 @@
 # std::sort
-Function for sorting data structures in the range \[first, last\).
+Function for sorting _containers_ in the range \[first, last\).
 
 ## Algorithm - Quick Sort
 
