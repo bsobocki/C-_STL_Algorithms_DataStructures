@@ -1,4 +1,4 @@
-# *** std::sort***
+# ___std::sort___
 Function for sorting _containers_ in the range \[first, last\).  
 
 
