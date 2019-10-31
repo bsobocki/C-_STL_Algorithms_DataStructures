@@ -1,9 +1,9 @@
-# std::sort
+# *** std::sort***
 Function for sorting _containers_ in the range \[first, last\).  
 
 
 ---  
-# *Table Of Contents*
+## *Table Of Contents*
 ---  
 ### *[Algorithm](#algorithm)*  
    - [Implementation](#implementation)  
