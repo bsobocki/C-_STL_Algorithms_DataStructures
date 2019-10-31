@@ -1,5 +1,17 @@
 # std::sort
-Algorithm for sorting data structures in the range \[first, last\).
+Function for sorting data structures in the range \[first, last\).
+
+## Algorithm - Quick Sort
+
+### Implementation
+This function is implemented as [QuickSort](https://www.geeksforgeeks.org/quick-sort/).  
+
+### Complexity
+Complexity: *`O(N*log(N))`* where *`n`* is the number of elements in the container.
+
+## Prototype
+**sort**(*startadress, endardess*)
+**sort**(*startadress, endadress, function_to_compare_elements*)
 
 ## Examples of use
 ___Array___ :  
