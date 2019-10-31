@@ -7,7 +7,7 @@ Function for sorting data structures in the range \[first, last\).
 This function is implemented as [QuickSort](https://www.geeksforgeeks.org/quick-sort/).  
 
 ### Complexity
-Complexity: *`O(N*log(N))`* where *`n`* is the number of elements in the container.
+Complexity: *`O(N*log(N))`* where *`N`* is the number of elements in the container.
 
 ## Prototype
 **sort**(*startadress, endardess*)
