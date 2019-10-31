@@ -1,5 +1,6 @@
-# C++ STL Algorithms and Data Structures
-Review of C ++ STL algorithms and data structures with examples of use.
+# [C++](https://www.geeksforgeeks.org/c-plus-plus/) [Standard Template Library (STL)](https://www.geeksforgeeks.org/the-c-standard-template-library-stl/)  
+## Algorithms and Containers 
+Review of C ++ STL algorithms and data structures with examples of use.  
 
-## In the repository there is a description about: 
+### In the repository there is a description about: 
 - ___std::sort___
