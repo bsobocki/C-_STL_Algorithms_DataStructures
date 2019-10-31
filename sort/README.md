@@ -13,20 +13,20 @@ Function for sorting _containers_ in the range \[first, last\).
    
 ---  
 
-## __Algorithm__
+## ___Algorithm___
 
-### __Implementation__
+### ___Implementation___
 This function is implemented as [QuickSort](https://www.geeksforgeeks.org/quick-sort/).  
 
-### __Complexity__
+### ___Complexity___
 Complexity: *`O(N*log(N))`* where *`N`* is the number of elements in the container.
 
-## __Prototype__  
+## ___Prototype___  
 
 **sort**(*startadress, endardess*);  
 **sort**(*startadress, endadress, function_to_compare_elements*);  
 
-## __Examples of use__
+## ___Examples of use___
 ### *Array* 
 ```
 int array1 [] = { 5, 7, 9, 0, 3, 1, 2 };  
