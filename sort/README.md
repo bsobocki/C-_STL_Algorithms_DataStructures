@@ -15,10 +15,10 @@ Function for sorting _containers_ in the range \[first, last\).
 
 ## ___Algorithm___
 
-### ___Implementation___
+### _Implementation_
 This function is implemented as [QuickSort](https://www.geeksforgeeks.org/quick-sort/).  
 
-### ___Complexity___
+### _Complexity_
 Complexity: *`O(N*log(N))`* where *`N`* is the number of elements in the container.
 
 ## ___Prototype___  
