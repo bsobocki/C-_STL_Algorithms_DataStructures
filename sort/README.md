@@ -1,34 +1,38 @@
-# std::sort
+# ___std::sort___
 Function for sorting _containers_ in the range \[first, last\).  
 
 
 ---  
-# *Table Of Contents*
----  
-### *[Algorithm](#algorithm)*  
-   - [Implementation](#implementation)  
-   - [Complexity](#complexity)   
-### *[Prototype](#prototype)*  
-### *[Examples of use](#examples-of-use)*   
-   - [Array](#array) 
+## *Table Of Contents*
+   - *__[Algorithm](#algorithm)__*  
+      - [Implementation](#implementation)  
+      - [Complexity](#complexity)   
+   - *__[Prototype](#prototype)__*  
+   - *__[Examples of use](#examples-of-use)__*   
+      - [Array](#array)  
+   - *__[Functions to compare elements](#functions-to-compare-elements)   
+      - [Lambda abstraction](#lambda-abstraction)        
+      - [Implemented functions](#implemented-functions)  
+      - [Implemented functors](#implemented-functors)  
+      - [Built-in functions](#built-in-functions)  
    
 ---  
 
-## Algorithm
+## ___Algorithm___
 
 ### Implementation
 This function is implemented as [QuickSort](https://www.geeksforgeeks.org/quick-sort/).  
 
 ### Complexity
-Complexity: *`O(N*log(N))`* where *`N`* is the number of elements in the container.
+Time Complexity: *__`O(N*log(N))`__* where *__`N`__* is the number of elements in the container.
 
-## Prototype  
+## ___Prototype___  
 
 **sort**(*startadress, endardess*);  
 **sort**(*startadress, endadress, function_to_compare_elements*);  
 
-## Examples of use
-### *Array* 
+## ___Examples of use___
+### Array 
 ```
 int array1 [] = { 5, 7, 9, 0, 3, 1, 2 };  
 int array2 [] = { 5, 7, 9, 0, 3, 1, 2 };  
@@ -46,3 +50,8 @@ The output will be:
 { 0, 1, 2, 3, 5, 7, 9 }
 { 0, 1, 2, 3, 5, 7, 9 }
 ```
+## ___Functions to compare elements___
+### Lambda abstraction
+### Implemented functions
+### Implemented functors
+### Built-in functions
