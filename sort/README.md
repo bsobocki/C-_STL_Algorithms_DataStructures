@@ -3,7 +3,7 @@ Function for sorting _containers_ in the range \[first, last\).
 
 
 ---  
-## *Table Of Contents*
+## *[Table Of Contents](#table-of-contents)*
    - *__[Algorithm](#algorithm)__*  
       - [Implementation](#implementation)  
       - [Complexity](#complexity)   
