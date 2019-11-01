@@ -8,8 +8,6 @@ template <class T>
 void show(T & array);
 void show(int * array, const int & size);
 void testSortOnArrays();
-//template<std::size_t SIZE>
-//void show(std::array<int, SIZE>& array);
 
 
 //template<std::size_t SIZE>
