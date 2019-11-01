@@ -52,6 +52,5 @@ The output will be:
 ```
 ## ___Functions to compare elements___
 ### Lambda abstraction
-### Implemented functions
-### Implemented functors
-### Built-in functions
+### Functions
+### Functors
