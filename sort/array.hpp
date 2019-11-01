@@ -36,7 +36,7 @@ void testSortOnArrays(){
     std::cout<<"Array after descending sorting: "; show(array);
 
     std::sort(array2.begin(),array2.end(),std::less<>());
-    std::cout<<"Array after descending sorting: "; show(array2);
+    std::cout<<"Array after ascending sorting: "; show(array2);
 }
 
 #endif //STL_STRUCTURES_ARRAY_HPP
