@@ -19,7 +19,7 @@ Function for sorting _containers_ in the range \[first, last\).
 This function is implemented as [QuickSort](https://www.geeksforgeeks.org/quick-sort/).  
 
 ### Complexity
-Complexity: *__`O(N*log(N))`__* where *__`N`__* is the number of elements in the container.
+Time Complexity: *__`O(N*log(N))`__* where *__`N`__* is the number of elements in the container.
 
 ## ___Prototype___  
 
