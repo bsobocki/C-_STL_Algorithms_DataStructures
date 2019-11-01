@@ -5,7 +5,7 @@
 #define STL_STRUCTURES_ARRAY_HPP
 
 template <class T>
-void show(T array);
+void show(T & array);
 void show(int * array, const int & size);
 void testSortOnArrays();
 //template<std::size_t SIZE>
