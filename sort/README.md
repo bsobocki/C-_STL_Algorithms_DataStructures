@@ -9,7 +9,12 @@ Function for sorting _containers_ in the range \[first, last\).
       - [Complexity](#complexity)   
    - *__[Prototype](#prototype)__*  
    - *__[Examples of use](#examples-of-use)__*   
-      - [Array](#array) 
+      - [Array](#array)  
+   - *__[Functions to compare elements](#functions-to-compare-elements)   
+      - [Lambda abstraction](#lambda-abstraction)        
+      - [Implemented functions](#implemented-functions)  
+      - [Implemented functors](#implemented-functors)  
+      - [Built-in functions](#built-in-functions)  
    
 ---  
 
@@ -27,7 +32,7 @@ Time Complexity: *__`O(N*log(N))`__* where *__`N`__* is the number of elements i
 **sort**(*startadress, endadress, function_to_compare_elements*);  
 
 ## ___Examples of use___
-### *Array* 
+### Array 
 ```
 int array1 [] = { 5, 7, 9, 0, 3, 1, 2 };  
 int array2 [] = { 5, 7, 9, 0, 3, 1, 2 };  
@@ -45,3 +50,8 @@ The output will be:
 { 0, 1, 2, 3, 5, 7, 9 }
 { 0, 1, 2, 3, 5, 7, 9 }
 ```
+## ___Functions to compare elements___
+### Lambda abstraction
+### Implemented functions
+### Implemented functors
+### Built-in functions
