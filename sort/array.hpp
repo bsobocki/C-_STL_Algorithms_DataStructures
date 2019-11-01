@@ -64,7 +64,7 @@ void testSortOnArrays(){
     std::cout<<"Array sorting by number parity with sorting both parts: "; show(array4);
 }
 
-template<class T>
+template<class & T>
 void show(T array){
     show(array.data(), array.size());
 }
