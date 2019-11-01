@@ -23,8 +23,10 @@ void testSortOnArrays(){
     std::cout<<"\n### int [] / int * ###"<<std::endl;
 
     std::cout<<"Array before sorting: "; show(arr, array_size);
+    
     std::sort(arr,arr + array_size);
     std::cout<<"Array after sorting without giving function to compare: "; show(arr, array_size);
+    
     std::sort(arr2_ptr,arr2_ptr + array_size,std::less<>());
     std::cout<<"Array after sorting with 'std::less<>()': "; show(arr2_ptr, array_size);
 
