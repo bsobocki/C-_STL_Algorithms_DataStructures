@@ -10,7 +10,7 @@ Function for sorting _containers_ in the range \[first, last\).
    - *__[Prototype](#prototype)__*  
    - *__[Examples of use](#examples-of-use)__*   
       - [Array](#array)  
-   - *__[Functions to compare elements](#functions-to-compare-elements)   
+   - *__[Functions to compare elements](#functions-to-compare-elements)__*   
       - [Lambda abstraction](#lambda-abstraction)        
       - [Implemented functions](#implemented-functions)  
       - [Implemented functors](#implemented-functors)  
