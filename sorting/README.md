@@ -101,4 +101,6 @@ struct Compare{
 };
 
 std::sort(vec.begin(), vec.end(), Compare());
+std::stable_sort(vec.begin(), vec.end(), std::greater<>());
+std::stable_sort(vec.begin(), vec.end(), std::less<>());
 ```
