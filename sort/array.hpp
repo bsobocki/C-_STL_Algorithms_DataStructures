@@ -1,5 +1,6 @@
 #include <iostream>
-#include <bits/stdc++.h>
+#include <array>
+#include <algorithm>
 #include "show_arr_vec.hpp"
 
 #ifndef STL_STRUCTURES_ARRAY_HPP
