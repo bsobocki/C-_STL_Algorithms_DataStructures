@@ -1,24 +1,24 @@
 # ___std::sort___ |  ___std::stable_sort___  |  ___std::partial_sort___
 Functions for sorting _containers_.  
   
-header: \<algorithm>
+header: *\<algorithm>*
 
 ---  
 ## *[Table Of Contents](#table-of-contents)*
-   - *__[Algorithm](#algorithm)__*  
-      - [Implementation](#implementation)  
-      - [Complexity](#complexity)   
-   - *__[Prototype](#prototype)__*  
-   - *__[Examples of use](#examples-of-use)__*   
-      - [Array](#array)  
+  - *__[std::sort](#std-sort)__*
+     - *__[Algorithm](#algorithm)__*  
+        - [Implementation](#implementation)  
+        - [Complexity](#complexity)   
+     - *__[Prototype](#prototype)__*  
+     - *__[Examples of use](#examples-of-use)__*   
+        - [Array](#array)  
    - *__[Functions to compare elements](#functions-to-compare-elements)__*   
       - [Lambda abstraction](#lambda-abstraction)        
-      - [Implemented functions](#implemented-functions)  
-      - [Implemented functors](#implemented-functors)  
-      - [Built-in functions](#built-in-functions)  
+      - [Functions](#functions)  
+      - [Functors](#functors)  
    
 ---  
-
+# ___std::sort___
 ## ___Algorithm___
 
 ### Implementation
@@ -51,7 +51,49 @@ The output will be:
 { 0, 1, 2, 3, 5, 7, 9 }
 { 0, 1, 2, 3, 5, 7, 9 }
 ```
-## ___Functions to compare elements___
-### Lambda abstraction
+# ___Functions to compare elements___  
+
+_Only functions with 2 arguments with the rights types!_  
+
+For this examples we declare:  
+```cpp
+std::vector<int> vec = { /* here are many different integers */ };
+```  
+```cpp
+std::vector<A> vec2;
+/* push some elements */
+```   
+```cpp
+struct A{
+  int x;
+  int y;
+};
+```
+### Lambda abstraction  
+```cpp
+// the first part of vec will consist of all even numbers of vector
+auto compare = [](const int & x, const int y) -> bool { return x%2 == 0; }
+std::sort(vec.begin(), vec.end(), compare);
+```
+```cpp
+// the first part of vec will consist of all numbers less than 0 of vector
+std::partial_sort(vec.begin(), vec.begin() + 5, vec.end(), [](const int & x, const int & y) -> bool { return y >= 0 ; });
+```
 ### Functions
-### Functors
+```cpp
+bool compareByX(const A & first, const A & second ){
+  return first.x > second.x;
+}
+
+std::stable_sort(vec2.begin(), vec2.end(), compareByX);
+```
+### Functors  
+```cpp
+struct Compare{
+  bool operator() (const int & x, const int & y) {
+    return x <= y ;
+  }
+};
+
+std::sort(vec.begin(), vec.end(), Compare());
+```
