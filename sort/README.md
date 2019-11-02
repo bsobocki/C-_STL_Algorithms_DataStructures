@@ -1,4 +1,4 @@
-# ___std::sort___   ___std::stable_sort___  ___std::partial_sort
+# ___std::sort___   ___std::stable_sort___  ___std::partial_sort___
 Functions for sorting _containers_.  
   
 header: <algorithm>
