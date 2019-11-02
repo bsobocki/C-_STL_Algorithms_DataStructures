@@ -1,6 +1,7 @@
-# ___std::sort___
-Function for sorting _containers_ in the range \[first, last\).  
-
+# ___std::sort___   ___std::stable_sort___  ___std::partial_sort
+Functions for sorting _containers_.  
+  
+header: <algorithm>
 
 ---  
 ## *[Table Of Contents](#table-of-contents)*
