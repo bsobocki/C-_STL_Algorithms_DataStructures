@@ -34,7 +34,7 @@ Time Complexity: *__`O(N*log(N))`__* where *__`N`__* is the number of elements i
 
 ## ___Examples of use___
 ### Array 
-```
+```cpp
 int array1 [] = { 5, 7, 9, 0, 3, 1, 2 };  
 int array2 [] = { 5, 7, 9, 0, 3, 1, 2 };  
 int* array_ptr = array2;
@@ -47,7 +47,7 @@ print_array(array1, array_size);
 print_array(array2, array_size);
 ```
 The output will be:  
-```
+```cpp
 { 0, 1, 2, 3, 5, 7, 9 }
 { 0, 1, 2, 3, 5, 7, 9 }
 ```
