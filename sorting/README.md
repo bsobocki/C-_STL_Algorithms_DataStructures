@@ -77,7 +77,12 @@ std::sort(vec.begin(), vec.end(), compare);
 ```
 ```cpp
 // the first part of vec will consist of all numbers less than 0 of vector
-std::partial_sort(vec.begin(), vec.begin() + 5, vec.end(), [](const int & x, const int & y) -> bool { return y >= 0 ; });
+std::partial_sort(vec.begin(), 
+                  vec.begin() + 5, 
+                  vec.end(), 
+                  [](const int & x, const int & y) -> bool { 
+                    return y >= 0 ; 
+                    });
 ```
 ### Functions
 ```cpp
