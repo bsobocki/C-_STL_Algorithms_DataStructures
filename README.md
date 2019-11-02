@@ -3,4 +3,4 @@
 Review of C ++ STL algorithms and containers with examples of use.  
 
 ### In the repository there is a description about: 
-- ___std::sort___
+- ___sorting___
