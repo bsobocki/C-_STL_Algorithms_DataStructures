@@ -5,7 +5,7 @@ header: *\<algorithm>*
 
 ---  
 ## *[Table Of Contents](#table-of-contents)*
-  - *__[std::sort](#std::sort)__*
+  - *__[std::sort](#std--sort)__*
      - *__[Algorithm](#algorithm)__*  
         - [Implementation](#implementation)  
         - [Complexity](#complexity)   
