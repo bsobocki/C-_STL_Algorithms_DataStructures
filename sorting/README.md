@@ -175,7 +175,7 @@ std::stable_sort(vec.begin(), vec.end(), std::less<>());
 
 # Sorting in different ways
 Depending on the functions to compare you can sort an array in different ways.  
-## You can use this functions ff you want to have an array sorted by:   
+## You can use this functions if you want to have an array sorted by:   
 ### parity of elements  
 ```cpp
 auto comp = [](const int & x, const int & y) -> bool {
