@@ -173,7 +173,8 @@ std::stable_sort(vec.begin(), vec.end(), std::greater<>());
 std::stable_sort(vec.begin(), vec.end(), std::less<>());
 ```
 
-# Sorting in different ways
+# Sorting in different ways  
+You can sort not only ascending or descending!
 Depending on the functions to compare you can sort an array in different ways.  
 ## You can use this functions if you want to have an array sorted by:   
 ### parity of elements  
