@@ -1,7 +1,7 @@
 # ___std::sort___ |  ___std::stable_sort___  |  ___std::partial_sort___
 Functions for sorting _containers_.  
   
-header: *\<algorithm>*
+header: *\<algorithm\>*
 
 ---  
 ## *[Table Of Contents](#table-of-contents)*
@@ -36,7 +36,7 @@ Using this function we **don't have guarantee** that the order of the element wi
 ## ___Algorithm___
 
 ### Implementation
-This function is implemented as [QuickSort](https://www.geeksforgeeks.org/quick-sort/).  
+This function is usually implemented as **[IntroSort](https://www.geeksforgeeks.org/introsort-or-introspective-sort/)** or **[QuickSort](https://www.geeksforgeeks.org/quick-sort/)**.  
 
 ### Complexity
 Time Complexity: *__`O(N*log(N))`__* where *__`N`__* is the number of elements in the container.
@@ -45,14 +45,29 @@ Time Complexity: *__`O(N*log(N))`__* where *__`N`__* is the number of elements i
 
 **sort**(*startadress, endardess*);  
 **sort**(*startadress, endadress, function_to_compare_elements*);  
-
+  
+---  
+  
 # ___stable_sort___
 ## ___Description___
 Function sorting a data container in range \[first, last\).   
-Using this function we **have guarantee** that the order of the element with equivalent value is the same in the container before sorting.
+Using this function we **have guarantee** that the order of the element with equivalent value is the same as in the container before sorting.
 ## ___Algorithm___
 
 ### Implementation
+Usually implemented as **[Merge Sort](https://www.geeksforgeeks.org/merge-sort/)**.  
+  
+According to [stackOverflow.com](https://stackoverflow.com/questions/23985891/what-is-the-difference-between-stdsort-and-stdstable-sort/23986246):  
+> In the case HP/ Microsoft
+> **std:stable_sort**
+> is a hybrid bottom up _merge sort_,
+> using _insertion sort_ to create sorted groups of 32 elements,
+> then doing bottom up _merge sort_ with the groups.
+>
+> **Merge sort** is also `O(N*log(N))`,
+> taking a bit longer for sorting arrays of objects,
+> but merge sort is often faster
+> if sorting an array of pointers to objects where a comparison function is included in the call.  
 
 ### Complexity
 Time Complexity (according to *GeekForGeek*):  
@@ -65,8 +80,9 @@ where *__`N`__* is the number of elements in the container (distance from first 
 
 **stable_sort**(*startadress, endardess*);  
 **stable_sort**(*startadress, endadress, function_to_compare_elements*);  
-
-
+  
+---  
+  
 # ___partial_sort___
 ## ___Description___  
   
@@ -74,25 +90,22 @@ where *__`N`__* is the number of elements in the container (distance from first 
 > in such a way that the elements before middle 
 > are the smallest elements in the entire range and 
 > are sorted in ascending order, while the remaining elements 
-> are left without any specific order..
+> are left without any specific order.
 >
 > -- <cite>cplusplus.com</cite>  
 
 For example:
 ```cpp
 int a [] = {3, 4, 2, 5, 1, 10};
- int _size = sizeof(a)/sizeof(a[0]);
- partial_sort(a, a +_size/2, a+_size,  A());
- print_array(a);
+int _size = sizeof(a)/sizeof(a[0]);
+partial_sort(a, a +_size/2, a+_size,  A());
+print_array(a);
 ```
 output:  
 ```cpp
 { 1, 2, 3, 5, 4, 10 }
 ```
-## ___Algorithm___
-
-### Implementation
-
+## ___Algorithm___  
 ### Complexity
 Time Complexity (according to *cppreference*):   
 *__`O(N*log(M))`__* 
