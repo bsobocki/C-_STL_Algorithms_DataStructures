@@ -25,8 +25,10 @@ header: ***\<algorithm>***
       - [Lambda abstraction](#lambda-abstraction)        
       - [Functions](#functions)  
       - [Functors](#functors)  
+   - *__[Sorting in different ways](#Sorting-in-different-ways)__*   
    
 ---  
+  
 # ___sort___
 ## ___Description___
 A generic function for comparison sorting in range \[first, last\).   
@@ -169,4 +171,28 @@ struct Compare{
 std::sort(vec.begin(), vec.end(), Compare());
 std::stable_sort(vec.begin(), vec.end(), std::greater<>());
 std::stable_sort(vec.begin(), vec.end(), std::less<>());
+```
+
+# Sorting in different ways
+Depending on the functions to compare you can sort an array in different ways.  
+## You can use this functions ff you want to have an array sorted by:   
+## Parity of elements  
+```cpp
+auto comp = [](const int & x, const int & y) -> bool {
+  return x % 2 == 0;
+}
+```  
+or 
+```cpp
+auto comp = [](const int & x, const int & y) -> bool {
+  return y % 2 == 0;
+}
+```  
+If you want to sort the array so that the odd numbers are at the beginning.  
+
+## positivity of numbers   
+```cpp
+auto comp = [] (const int & x, const int & y) -> bool {
+  return x > 0;
+}
 ```
