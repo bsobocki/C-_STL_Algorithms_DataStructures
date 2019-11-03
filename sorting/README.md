@@ -5,29 +5,29 @@ header: ***\<algorithm>***
 ---  
 ## *[Table Of Contents](#table-of-contents)*
   - *__[sort](#sort)__*  
-     - *__[Description](#description)__*
-     - *__[Algorithm](#algorithm)__*  
+     - *[Description](#description)*
+     - *[Algorithm](#algorithm)*  
         - [Implementation](#implementation)  
         - [Complexity](#complexity)   
-     - *__[Prototype](#prototype)__*  
+     - *[Prototype](#prototype)*  
   - *__[stable_sort](#stable_sort)__*  
-     - *__[Description](#description)__*
-     - *__[Algorithm](#algorithm)__*  
+     - *[Description](#description)*
+     - *[Algorithm](#algorithm)*  
         - [Implementation](#implementation)  
         - [Complexity](#complexity)   
-     - *__[Prototype](#prototype)__*  
+     - *[Prototype](#prototype)*  
   - *__[partial_sort](#partial_sort)__*  
-     - *__[Description](#description)__*
-     - *__[Algorithm](#algorithm)__*  
+     - *[Description](#description)*
+     - *[Algorithm](#algorithm)*  
         - [Complexity](#complexity)   
-     - *__[Prototype](#prototype)__*    
+     - *[Prototype](#prototype)*    
   - *__[nth_element](#nth_element)__*  
-     - *__[Description](#description)__*
-     - *__[Prototype](#prototype)__*  
+     - *[Description](#description)*
+     - *[Prototype](#prototype)*  
    - *__[Functions to compare elements](#functions-to-compare-elements)__*   
-      - [Lambda abstraction](#lambda-abstraction)        
-      - [Functions](#functions)  
-      - [Functors](#functors)  
+      - *[Lambda abstraction](#lambda-abstraction)*        
+      - *[Functions](#functions)*  
+      - *[Functors](#functors)*  
    - *__[Sorting in different ways](#Sorting-in-different-ways)__*   
    
 ---  
