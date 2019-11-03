@@ -19,7 +19,6 @@ header: ***\<algorithm>***
   - *__[partial_sort](#partial_sort)__*  
      - *__[Description](#description)__*
      - *__[Algorithm](#algorithm)__*  
-        - [Implementation](#implementation)  
         - [Complexity](#complexity)   
      - *__[Prototype](#prototype)__*  
    - *__[Functions to compare elements](#functions-to-compare-elements)__*   
