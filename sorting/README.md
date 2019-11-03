@@ -152,7 +152,7 @@ output:
 ## ___Prototype___  
 
 **std::nth_element**(*startadress, nth, endadress*);  
-**std::nth_element**(*startadress, middle, endadress, function_to_compare_elements*);  
+**std::nth_element**(*startadress, nth, endadress, function_to_compare_elements*);  
 
 # ___Functions to compare elements___  
 
