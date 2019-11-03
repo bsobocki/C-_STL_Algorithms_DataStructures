@@ -30,8 +30,8 @@ header: ***\<algorithm>***
 ---  
 # ___sort___
 ## ___Description___
-Function sorting a data container in range \[first, last\).   
-Using this function we **don't have guarantee** that the order of the element with equivalent value is the same in the container before sorting.
+A generic function for comparison sorting in range \[first, last\).   
+By using this function **we have no guarantee** that for elements of equivalent value the order from the original array will be maintained.
 ## ___Algorithm___
 
 ### Implementation
@@ -50,7 +50,7 @@ Time Complexity: *__`O(N*log(N))`__* where *__`N`__* is the number of elements i
 # ___stable_sort___
 ## ___Description___
 Function sorting a data container in range \[first, last\).   
-Using this function we **have guarantee** that the order of the element with equivalent value is the same as in the container before sorting.
+Using this function **we have guarantee** that the order of the element with equivalent value is the same as in the array before sorting.
 ## ___Algorithm___
 
 ### Implementation
