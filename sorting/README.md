@@ -1,4 +1,4 @@
-# ___std::sort___ |  ___std::stable_sort___  |  ___std::partial_sort___
+# SORTING
   
 header: ***\<algorithm>***
 
