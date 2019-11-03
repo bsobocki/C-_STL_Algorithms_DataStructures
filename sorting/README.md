@@ -21,10 +21,8 @@ header: ***\<algorithm>***
      - *__[Algorithm](#algorithm)__*  
         - [Complexity](#complexity)   
      - *__[Prototype](#prototype)__*    
-  - *__[nth_element](#partial_sort)__*  
+  - *__[nth_element](#nth_element)__*  
      - *__[Description](#description)__*
-     - *__[Algorithm](#algorithm)__*  
-        - [Complexity](#complexity)   
      - *__[Prototype](#prototype)__*  
    - *__[Functions to compare elements](#functions-to-compare-elements)__*   
       - [Lambda abstraction](#lambda-abstraction)        
