@@ -23,12 +23,15 @@ header: ***\<algorithm>***
      - *[Prototype](#prototype)*    
   - *__[nth_element](#nth_element)__*  
      - *[Description](#description)*
+     - *[Prototype](#prototype)*   
+  - *__[is_sorted](#is_sorted)__*  
+     - *[Description](#description)*
      - *[Prototype](#prototype)*  
    - *__[Functions to compare elements](#functions-to-compare-elements)__*   
       - *[Lambda abstraction](#lambda-abstraction)*        
       - *[Functions](#functions)*  
       - *[Functors](#functors)*  
-   - *__[Sorting in different ways](#Sorting-in-different-ways)__*   
+   - *__[Sorting in different ways](#sorting-in-different-ways)__*   
    
 ---  
   
@@ -153,6 +156,27 @@ output:
 
 **std::nth_element**(*startadress, nth, endadress*);  
 **std::nth_element**(*startadress, nth, endadress, function_to_compare_elements*);  
+  
+---  
+      
+# ___is_sorted___
+## ___Description___  
+A predicates returns 
+```cpp 
+true 
+``` 
+if the range \[first,last\) is sorted into ascending order.
+
+>The elements are compared using *operator __\<__* for the first version, and *comp* for the second.
+>
+>-- <cite>cplusplus.com</cite>  
+
+## ___Prototype___  
+
+**std::nth_element**(*startadress, nth, endadress*);  
+**std::nth_element**(*startadress, nth, endadress, function_to_compare_elements*);  
+  
+---  
 
 # ___Functions to compare elements___  
 
@@ -209,6 +233,7 @@ std::stable_sort(vec.begin(), vec.end(), std::less<>());
 ```
 
 # Sorting in different ways  
+
 You can sort not only ascending or descending!
 Depending on the functions to compare you can sort an array in different ways.  
 ## You can use this functions if you want to have an array sorted by:   
