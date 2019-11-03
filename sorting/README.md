@@ -1,7 +1,6 @@
 # ___std::sort___ |  ___std::stable_sort___  |  ___std::partial_sort___
-Functions for sorting _containers_.  
   
-header: *\<algorithm\>*
+header: ***\<algorithm>***
 
 ---  
 ## *[Table Of Contents](#table-of-contents)*
