@@ -9,7 +9,7 @@ header: ***\<algorithm>***
      - *Algorithm*  
         - Implementation  
         - Complexity  
-     - *Prototype  
+     - *Prototype*  
   - *__[stable_sort](#stable_sort)__*  
      - *Description*
      - *Algorithm*  
