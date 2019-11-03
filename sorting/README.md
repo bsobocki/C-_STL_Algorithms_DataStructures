@@ -5,20 +5,34 @@ header: *\<algorithm>*
 
 ---  
 ## *[Table Of Contents](#table-of-contents)*
-  - *__[std::sort](#std--sort)__*
+  - *__[sort](#sort)__*  
+     - *__[Description](#description)__*
      - *__[Algorithm](#algorithm)__*  
         - [Implementation](#implementation)  
         - [Complexity](#complexity)   
      - *__[Prototype](#prototype)__*  
-     - *__[Examples of use](#examples-of-use)__*   
-        - [Array](#array)  
+  - *__[stable_sort](#stable-sort)__*  
+     - *__[Description](#description)__*
+     - *__[Algorithm](#algorithm)__*  
+        - [Implementation](#implementation)  
+        - [Complexity](#complexity)   
+     - *__[Prototype](#prototype)__*  
+  - *__[partial_sort](#partial-sort)__*  
+     - *__[Description](#description)__*
+     - *__[Algorithm](#algorithm)__*  
+        - [Implementation](#implementation)  
+        - [Complexity](#complexity)   
+     - *__[Prototype](#prototype)__*  
    - *__[Functions to compare elements](#functions-to-compare-elements)__*   
       - [Lambda abstraction](#lambda-abstraction)        
       - [Functions](#functions)  
       - [Functors](#functors)  
    
 ---  
-# ___std::sort___
+# ___sort___
+## ___Description___
+Function sorting a data container in range \[first, last\).   
+Using this function we **don't have guarantee** that the order of the element with equivalent value is the same in the container before sorting.
 ## ___Algorithm___
 
 ### Implementation
@@ -32,25 +46,66 @@ Time Complexity: *__`O(N*log(N))`__* where *__`N`__* is the number of elements i
 **sort**(*startadress, endardess*);  
 **sort**(*startadress, endadress, function_to_compare_elements*);  
 
-## ___Examples of use___
-### Array 
-```cpp
-int array1 [] = { 5, 7, 9, 0, 3, 1, 2 };  
-int array2 [] = { 5, 7, 9, 0, 3, 1, 2 };  
-int* array_ptr = array2;
-int array_size = sizeof(array1)/sizeof(array1[0]);
+# ___stable_sort___
+## ___Description___
+Function sorting a data container in range \[first, last\).   
+Using this function we **have guarantee** that the order of the element with equivalent value is the same in the container before sorting.
+## ___Algorithm___
 
-std::sort(array1, array1 + array_size);  // no function to compare elements -> ascending sorting
-std::sort(array2, array2 + array_size, std::less<>());  // ascending sorting
+### Implementation
 
-print_array(array1, array_size);
-print_array(array2, array_size);
-```
-The output will be:  
+### Complexity
+Time Complexity (according to *GeekForGeek*):  
+*__`O(N*log^2(N))`__* if additional memory linearly proportional to length is not available.  
+*__`O(N*log(N))`__* otherwise. 
+  
+where *__`N`__* is the number of elements in the container (distance from first to last).
+
+## ___Prototype___  
+
+**stable_sort**(*startadress, endardess*);  
+**stable_sort**(*startadress, endadress, function_to_compare_elements*);  
+
+
+# ___partial_sort___
+## ___Description___  
+:  
+> Rearranges the elements in the range \[first,last), 
+> in such a way that the elements before middle 
+> are the smallest elements in the entire range and 
+> are sorted in ascending order, while the remaining elements 
+> are left without any specific order..
+>
+> -- <cite>cplusplus.com</cite>  
+
+For example:
 ```cpp
-{ 0, 1, 2, 3, 5, 7, 9 }
-{ 0, 1, 2, 3, 5, 7, 9 }
+int a [] = {3, 4, 2, 5, 1, 10};
+ int _size = sizeof(a)/sizeof(a[0]);
+ partial_sort(a, a +_size/2, a+_size,  A());
+ print_array(a);
 ```
+output:  
+```cpp
+{ 1, 2, 3, 5, 4, 10 }
+```
+## ___Algorithm___
+
+### Implementation
+
+### Complexity
+Time Complexity (according to *cppreference*):   
+*__`O(N*log(M))`__* 
+  
+where:  
+*__`N`__* is the distance from the first to the last element.
+*__`M`__* is the distance from the first to the moddle element.
+
+## ___Prototype___  
+
+**partial_sort**(*startadress, middle, endardess*);  
+**partial_sort**(*startadress, middle, endadress, function_to_compare_elements*);  
+
 # ___Functions to compare elements___  
 
 _Only functions with 2 arguments with the rights types!_  
@@ -78,7 +133,7 @@ std::sort(vec.begin(), vec.end(), compare);
 ```cpp
 // the first part of vec will consist of all numbers less than 0 of vector
 std::partial_sort(vec.begin(), 
-                  vec.begin() + 5, 
+                  vec.begin() + 3, 
                   vec.end(), 
                   [](const int & x, const int & y) -> bool { 
                     return y >= 0 ; 
