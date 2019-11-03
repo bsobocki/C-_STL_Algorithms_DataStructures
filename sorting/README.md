@@ -5,28 +5,31 @@ header: ***\<algorithm>***
 ---  
 ## *[Table Of Contents](#table-of-contents)*
   - *__[sort](#sort)__*  
-     - *[Description](#description)*
-     - *[Algorithm](#algorithm)*  
-        - [Implementation](#implementation)  
-        - [Complexity](#complexity)   
-     - *[Prototype](#prototype)*  
+     - *Description*
+     - *Algorithm*  
+        - Implementation  
+        - Complexity  
+     - *Prototype  
   - *__[stable_sort](#stable_sort)__*  
-     - *[Description](#description)*
-     - *[Algorithm](#algorithm)*  
-        - [Implementation](#implementation)  
-        - [Complexity](#complexity)   
-     - *[Prototype](#prototype)*  
+     - *Description*
+     - *Algorithm*  
+        - Implementation  
+        - Complexity   
+     - *Prototype*  
   - *__[partial_sort](#partial_sort)__*  
-     - *[Description](#description)*
-     - *[Algorithm](#algorithm)*  
-        - [Complexity](#complexity)   
-     - *[Prototype](#prototype)*    
+     - *Description*
+     - *Algorithm*  
+        - Complexity   
+     - *Prototype*    
   - *__[nth_element](#nth_element)__*  
-     - *[Description](#description)*
-     - *[Prototype](#prototype)*   
+     - *Description*
+     - *Prototype*   
   - *__[is_sorted](#is_sorted)__*  
-     - *[Description](#description)*
-     - *[Prototype](#prototype)*  
+     - *Description*
+     - *Prototype*  
+  - *__[is_sorted_until](#is_sorted_until)__*  
+     - *Description*
+     - *Prototype*  
    - *__[Functions to compare elements](#functions-to-compare-elements)__*   
       - *[Lambda abstraction](#lambda-abstraction)*        
       - *[Functions](#functions)*  
@@ -173,8 +176,27 @@ if the range \[first,last\) is sorted into ascending order.
 
 ## ___Prototype___  
 
-**std::nth_element**(*startadress, nth, endadress*);  
-**std::nth_element**(*startadress, nth, endadress, function_to_compare_elements*);  
+**std::is_sorted**(*startadress, nth, endadress*);  
+**std::is_sorted**(*startadress, nth, endadress, function_to_compare_elements*);  
+  
+---  
+      
+# ___is_sorted_until___
+## ___Description___  
+> Returns an iterator to the first element in the range \[first,last) which does not follow an ascending order.
+>
+> The range between first and the iterator returned is sorted.
+> 
+> If the entire range is sorted, the function returns last.
+> 
+> The elements are compared using operator< for the first version, and comp for the second
+>
+>-- <cite>cplusplus.com</cite>  
+
+## ___Prototype___  
+
+**std::is_sorted_until**(*startadress, nth, endadress*);  
+**std::is_sorted_until**(*startadress, nth, endadress, function_to_compare_elements*);  
   
 ---  
 
