@@ -69,7 +69,7 @@ where *__`N`__* is the number of elements in the container (distance from first 
 
 # ___partial_sort___
 ## ___Description___  
-:  
+  
 > Rearranges the elements in the range \[first,last), 
 > in such a way that the elements before middle 
 > are the smallest elements in the entire range and 
@@ -98,8 +98,8 @@ Time Complexity (according to *cppreference*):
 *__`O(N*log(M))`__* 
   
 where:  
-*__`N`__* is the distance from the first to the last element.
-*__`M`__* is the distance from the first to the moddle element.
+*__`N`__* is the distance from the first to the last element.  
+*__`M`__* is the distance from the first to the moddle element.  
 
 ## ___Prototype___  
 
