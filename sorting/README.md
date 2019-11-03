@@ -164,11 +164,7 @@ output:
       
 # ___is_sorted___
 ## ___Description___  
-A predicates returns 
-```cpp 
-true 
-``` 
-if the range \[first,last\) is sorted into ascending order.
+A predicates returns `true ` if the range \[first,last\) is sorted into ascending order.  
 
 >The elements are compared using *operator __\<__* for the first version, and *comp* for the second.
 >
