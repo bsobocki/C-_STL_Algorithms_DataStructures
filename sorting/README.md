@@ -43,8 +43,8 @@ Time Complexity: *__`O(N*log(N))`__* where *__`N`__* is the number of elements i
 
 ## ___Prototype___  
 
-**sort**(*startadress, endardess*);  
-**sort**(*startadress, endadress, function_to_compare_elements*);  
+**std::sort**(*startadress, endardess*);  
+**std::sort**(*startadress, endadress, function_to_compare_elements*);  
   
 ---  
   
@@ -78,8 +78,8 @@ where *__`N`__* is the number of elements in the container (distance from first 
 
 ## ___Prototype___  
 
-**stable_sort**(*startadress, endardess*);  
-**stable_sort**(*startadress, endadress, function_to_compare_elements*);  
+**std::stable_sort**(*startadress, endardess*);  
+**std::stable_sort**(*startadress, endadress, function_to_compare_elements*);  
   
 ---  
   
@@ -116,8 +116,8 @@ where:
 
 ## ___Prototype___  
 
-**partial_sort**(*startadress, middle, endardess*);  
-**partial_sort**(*startadress, middle, endadress, function_to_compare_elements*);  
+**std::partial_sort**(*startadress, middle, endardess*);  
+**std::partial_sort**(*startadress, middle, endadress, function_to_compare_elements*);  
 
 # ___Functions to compare elements___  
 
