@@ -176,7 +176,7 @@ std::stable_sort(vec.begin(), vec.end(), std::less<>());
 # Sorting in different ways
 Depending on the functions to compare you can sort an array in different ways.  
 ## You can use this functions ff you want to have an array sorted by:   
-## parity of elements  
+### parity of elements  
 ```cpp
 auto comp = [](const int & x, const int & y) -> bool {
   return x % 2 == 0;
@@ -190,7 +190,7 @@ auto comp = [](const int & x, const int & y) -> bool {
 ```  
 If you want to sort the array so that the odd numbers are at the beginning.  
 
-## positivity of numbers   
+### positivity of numbers   
 ```cpp
 auto comp = [] (const int & x, const int & y) -> bool {
   return x > 0;
