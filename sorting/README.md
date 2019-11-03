@@ -11,13 +11,13 @@ header: *\<algorithm>*
         - [Implementation](#implementation)  
         - [Complexity](#complexity)   
      - *__[Prototype](#prototype)__*  
-  - *__[stable_sort](#stable-sort)__*  
+  - *__[stable_sort](#stable_sort)__*  
      - *__[Description](#description)__*
      - *__[Algorithm](#algorithm)__*  
         - [Implementation](#implementation)  
         - [Complexity](#complexity)   
      - *__[Prototype](#prototype)__*  
-  - *__[partial_sort](#partial-sort)__*  
+  - *__[partial_sort](#partial_sort)__*  
      - *__[Description](#description)__*
      - *__[Algorithm](#algorithm)__*  
         - [Implementation](#implementation)  
