@@ -121,8 +121,9 @@ where:
 
 **std::partial_sort**(*startadress, middle, endardess*);  
 **std::partial_sort**(*startadress, middle, endadress, function_to_compare_elements*);  
-
   
+---  
+    
 # ___nth_element___
 ## ___Description___  
   
