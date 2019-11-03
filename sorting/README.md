@@ -20,6 +20,11 @@ header: ***\<algorithm>***
      - *__[Description](#description)__*
      - *__[Algorithm](#algorithm)__*  
         - [Complexity](#complexity)   
+     - *__[Prototype](#prototype)__*    
+  - *__[nth_element](#partial_sort)__*  
+     - *__[Description](#description)__*
+     - *__[Algorithm](#algorithm)__*  
+        - [Complexity](#complexity)   
      - *__[Prototype](#prototype)__*  
    - *__[Functions to compare elements](#functions-to-compare-elements)__*   
       - [Lambda abstraction](#lambda-abstraction)        
@@ -118,6 +123,37 @@ where:
 
 **std::partial_sort**(*startadress, middle, endardess*);  
 **std::partial_sort**(*startadress, middle, endadress, function_to_compare_elements*);  
+
+  
+# ___nth_element___
+## ___Description___  
+  
+> Rearranges the elements in the range \[first,last), 
+> in such a way that the element at the nth position is the element that would be in that position in a sorted sequence.
+>  
+> The other elements are left without any specific order, 
+> except that none of the elements preceding nth are greater than it, and none of the elements following it are less.
+>  
+> The elements are compared using operator< for the first version, and comp for the second.
+>
+> -- <cite>cplusplus.com</cite>  
+
+For example:
+```cpp
+int a [] = {10, 1, 0, 3, 4, 2, 5, 1, 7, -7 , -3 , 7};
+int _size = sizeof(a)/sizeof(a[0]);
+nth_element(a, a + 7, a+_size);
+print_array(a);
+```
+output:  
+```cpp
+{ 1, -7, 0, 1, -3, 2, 3, 4, 5, 7, 10, 7}
+```
+
+## ___Prototype___  
+
+**std::nth_element**(*startadress, nth, endadress*);  
+**std::nth_element**(*startadress, middle, endadress, function_to_compare_elements*);  
 
 # ___Functions to compare elements___  
 
