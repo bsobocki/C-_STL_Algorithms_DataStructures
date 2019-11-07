@@ -4,3 +4,6 @@ sort/CMakeLists.txt
 .idea
 sorting/cmake-build-debug
 sorting/CMakeLists.txt
+array/cmake-build-debug
+array/CMakeLists.txt
+array/CMakeLists.txt
