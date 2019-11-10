@@ -6,6 +6,7 @@ Review of C ++ STL algorithms and containers with examples of use.
 ### Algorithms:
   - ___sorting___
 ### Containers: 
+  - ___array___
 ```cpp
 /* I'm working on it! */
 ```
