@@ -1,12 +1,14 @@
 # std::array
 *\(since C++ 11)*  
 A STL container represents arrays with constant size.   
+From ***`cppreference.com`*** we know, that unlike a C-style array, it doesn't decay to T* automatically. 
   
 ---  
   
 # [Table of contents](#table-of-contents)  
   
-  1) [Definition](#definition)
+  1) [Definition](#definition)  
+  
 ---  
 
 # Definition
