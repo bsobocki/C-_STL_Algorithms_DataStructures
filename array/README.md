@@ -27,7 +27,7 @@ template <class T, std::size_t N> struct array;
   
   
   
-# Get element
+## Get element
   
 ...  
   
