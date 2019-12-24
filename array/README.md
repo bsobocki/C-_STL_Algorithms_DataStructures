@@ -24,9 +24,11 @@ template <class T, std::size_t N> struct array;
 ```
 # Member Functions
 
-## Get element
+---
 
-### at  
+# Get element
+
+## at  
 
 ```cpp 
 reference at(size_type pos);
@@ -38,7 +40,7 @@ Returns a reference to the element on the position **`pos`** *with bounds checki
 **Complexity:** O(1)
 
 
-### indexing operator
+## indexing operator
 
 ```cpp 
 reference operator[](size_type pos);
@@ -48,7 +50,7 @@ Returns a reference to the element on position **`pos`** *without bounds checkin
 
 **Complexity:** O(1)
 
-### front
+## front
 
 ```cpp
 reference front();
@@ -74,7 +76,7 @@ Yes
 
 **Complexity:** O(1)
 
-### back
+## back
 
 ```cpp
 reference back();
