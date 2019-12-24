@@ -28,7 +28,9 @@ template <class T, std::size_t N> struct array;
   
   
 # Get element
-
+  
+...  
+  
 ## at  
 
 ```cpp 
@@ -51,6 +53,8 @@ Returns a reference to the element on position **`pos`** *without bounds checkin
 
 **Complexity:** O(1)
 
+...  
+  
 ## front
 
 ```cpp
@@ -77,6 +81,8 @@ Yes
 
 **Complexity:** O(1)
 
+...  
+  
 ## back
 
 ```cpp
