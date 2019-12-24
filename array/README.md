@@ -42,7 +42,8 @@ Returns a reference to the element on the position **`pos`** *with bounds checki
 
 **Complexity:** O(1)
 
-
+...  
+  
 ### indexing operator
 
 ```cpp 
