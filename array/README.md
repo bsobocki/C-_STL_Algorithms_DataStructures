@@ -7,7 +7,12 @@ From ***`cppreference.com`*** we know, that unlike a C-style array, it doesn't d
   
 # [Table of contents](#table-of-contents)  
   
-  1) [Definition](#definition)  
+  * [Definition](#definition)  
+  * [Member Functions](#member-functions)  
+    * [Get element](#get-element)
+      * [at](#at)  
+      * [indexing operator](#indexing-operator)  
+      * 
   
 ---  
 
@@ -17,3 +22,14 @@ in header: ***\<array>***
 ```cpp
 template <class T, std::size_t N> struct array;
 ```
+# Member Functions
+
+## Get element
+
+### at  
+
+Definition: *reference at(size_type pos)*
+
+### indexing operator
+
+Definition: *reference operator [] (size_type pos)*
