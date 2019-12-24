@@ -1,12 +1,11 @@
-# std::array
-*\(since C++ 11)*  
-A STL container represents arrays with constant size.   
-From ***`cppreference.com`*** we know, that unlike a C-style array, it doesn't decay to T* automatically. 
-  
+# std::array  
+Description of the std::array container with its methods.  
+It is based on the content of the websites:  [cppreference - array](https://en.cppreference.com/w/cpp/container/array) and [cplusplus - array](http://www.cplusplus.com/reference/array/array/)
+
 ---  
   
 # [Table of contents](#table-of-contents)  
-  
+  * [Description](#description)
   * [Definition](#definition)  
   * [Member Functions](#member-functions)  
     * [Get element](#get-element)
@@ -14,8 +13,17 @@ From ***`cppreference.com`*** we know, that unlike a C-style array, it doesn't d
       * [indexing operator](#indexing-operator)  
       * [front](#front)
       * [back](#back)
+    * [data](#data)
   
 ---  
+
+# Description  
+
+*\(since C++ 11)*  
+A STL container represents arrays with constant size.   
+From ***`cppreference.com`*** we know, that unlike a C-style array, it doesn't decay to T* automatically. 
+
+You can use it like normal C-style array (overloaded indexing operator "\[ \]"), with some features, like access to the size of the container, by calling mathod "size()"
 
 # Definition
 in header: ***\<array>***  
@@ -112,3 +120,15 @@ Returns reference to the last element.
 
 **Complexity:** O(1)
 
+...  
+
+## data  
+  
+```cpp
+T* data() noexcept;
+```  
+
+Returns pointer to the underlying array serving as element storage.  
+If array is not empty, `.data()` returns pointer compares equal to the address of the first element.  
+
+**Complexity:** O(1)
