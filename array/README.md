@@ -22,10 +22,10 @@ in header: ***\<array>***
 ```cpp
 template <class T, std::size_t N> struct array;
 ```
-# Member Functions
-
----
-
+# Member Functions  
+  
+  
+  
 # Get element
 
 ## at  
