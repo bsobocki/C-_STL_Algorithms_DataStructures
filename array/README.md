@@ -13,6 +13,7 @@ From ***`cppreference.com`*** we know, that unlike a C-style array, it doesn't d
       * [at](#at)  
       * [indexing operator](#indexing-operator)  
       * [front](#front)
+      * [back](#back)
   
 ---  
 
