@@ -14,6 +14,7 @@ It is based on the content of the websites:  [cppreference - array](https://en.c
       * [front](#front)
       * [back](#back)
     * [data](#data)
+    * [Iterators](#iterators)
   
 ---  
 
@@ -132,3 +133,116 @@ Returns pointer to the underlying array serving as element storage.
 If array is not empty, `.data()` returns pointer compares equal to the address of the first element.  
 
 **Complexity:** O(1)
+
+...  
+
+## Iterators
+
+Iterators are the objects which are used to point at the element address in the container memory.
+
+for example you can use it to display elements:  
+```cpp
+  std::array<int, 7> arr = {1, 2, 3, 4, 5, 6, 7};
+  std::array<int, 7>::iterator it = arr.begin(); // iterator pointing at the first element of 'arr'
+  for(it; it != arr.end(); it++) 
+    std::cout<<*it<<std::endl;
+```  
+
+Output:  
+```
+  1
+  2
+  3
+  4
+  5
+  6
+  7
+```  
+...  
+
+### begin 
+  
+```cpp
+iterator begin() noexcept;
+```
+Returns iterator to the first element.
+
+if the container is empty then arr.begin() == arr.end()
+
+### end
+
+```cpp
+iterator end() noexcept;
+```
+Returns iterator to the element following the last element.
+
+### cbegin
+
+```cpp
+const_iterator cbegin() const noexcept;
+```  
+Returns const iterator to the first element.
+
+### cend
+
+```cpp
+const_iterator cend() const noexcept;
+```
+Returns const iterator to the element following the last element.
+
+## Reverse Iterators
+
+You can use them to pass through the container in reverse order.
+
+For example:
+```cpp
+  std::array<int, 7> arr = {1, 2, 3, 4, 5, 6, 7};
+  std::array<int, 7>::reverse_iterator it = arr.rbegin();
+  for(it; it != arr.rend(); it++) 
+    std::cout<<*it<<std::endl;
+```
+
+Output:
+```
+  7
+  6
+  5
+  4
+  3
+  2
+  1
+```  
+
+...  
+
+
+
+### rbegin 
+  
+```cpp
+reverse_iterator rbegin() noexcept;
+```
+Returns iterator to the first element of the reversed container.
+
+if the container is empty then arr.begin() == arr.end()
+
+### rend
+
+```cpp
+reverse_iterator rend() noexcept;
+```
+Returns iterator to the element following the last element of the reversed container.
+
+### crbegin
+
+```cpp
+const_reverse_iterator crbegin() const noexcept;
+```  
+Returns const reverse iterator to the first element of the reversed container.
+
+### crend
+
+```cpp
+const_reverse_iterator crend() const noexcept;
+```
+Returns const reverse iterator to the element following the last element of the reversed container.
