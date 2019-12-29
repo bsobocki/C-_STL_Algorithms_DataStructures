@@ -5,8 +5,10 @@ Review of C ++ STL algorithms and containers with examples of use.
 ### In the repository there are a description about: 
 ### Algorithms:
   - ___sorting___
+  - ___permutations___
 ### Containers: 
   - ___array___
+  - ___set___
 ```cpp
 /* I'm working on it! */
 ```
