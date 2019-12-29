@@ -13,8 +13,8 @@ void print(T * arr, size_t size){
 template <typename T>
 void print_permutations(T * arr, size_t size){
   int count = 0;
-  std::cout<<"next permutations of collection = "; print<int>(arr, size); 
-  std::cout<<"printing until next_permutation returns true (lexicographically ascending order): \n";
+  std::cout<<"\n\n---\n\nnext permutations of collection = "; print<int>(arr, size); 
+  std::cout<<"printing until next_permutation returns true (lexicographically ascending order): \n\n";
   do { 
     print<T>(arr, size); 
     count++; 
