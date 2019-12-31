@@ -25,6 +25,8 @@ After permutation: {1, 3, 2};
 std::next_permutation' returns `true`  
 if the next determined permutation is lexicographically higher than previous and `false` otherwise.
 
+---  
+
 # std::prev_permutation
 
 ## use
@@ -52,6 +54,7 @@ After permutation: {3, 1, 2};
 std::next_permutation' returns `true` 
 if the next determined permutation is lexicographically higher than previous and `false` otherwise.
 
+---  
 
 # cryptarithm.cpp
 
@@ -77,6 +80,7 @@ A simple program to solve [cryptarithms](https://en.wikipedia.org/wiki/Verbal_ar
   
 3) Print the solution  
 
+---  
 
 # perm.cpp
 Prints next permutations of two containers:  
