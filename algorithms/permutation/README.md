@@ -55,7 +55,7 @@ if the next determined permutation is lexicographically higher than previous and
 
 # cryptarithm.cpp
 
-A simple program to solve cryptarithms.
+A simple program to solve [cryptarithms](https://en.wikipedia.org/wiki/Verbal_arithmetic).
 
 ## program  
 
