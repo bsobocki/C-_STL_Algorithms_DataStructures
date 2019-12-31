@@ -16,7 +16,7 @@ Container that store unique elements following specific order.
 
 constructors:  
     - empty set (default constructor),  
-    - range (std::set\<T\>(container.begin(), constainer.end()))  
+    - range (std::set\<T\>(container.begin(), container.end()))  
 
 ## example of use
 
