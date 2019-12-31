@@ -79,6 +79,6 @@ A simple program to solve cryptarithms.
 
 
 # perm.cpp
-Prints next permutations of two containers:
-    - until std::next_permutation returns true (until the next permutation is lexicographically higher than previous).
-    - until std::prev_permutation returns true (until the next permutation is lexicographically lower than previous).
+Prints next permutations of two containers:  
+    - until std::next_permutation returns true (until the next permutation is lexicographically higher than previous).  
+    - until std::prev_permutation returns true (until the next permutation is lexicographically lower than previous).  
