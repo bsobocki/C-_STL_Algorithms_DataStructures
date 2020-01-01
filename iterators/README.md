@@ -1,12 +1,12 @@
 # Iterators
 
-This file README.md has been created with help `cplusplus.com`. 
+This file README.md has been created based on information from [`cplusplus.com`](http://www.cplusplus.com/reference/iterator/). 
 
 ## [Table Of Contents](#table-of-contents)
   * **[Description](#description)**
   * **[More About Iterators](#description)**
     * **[Output Iterator](#output-iterator)**
-    * **[Input Iterator](#Input-iterator)**
+    * **[Input Iterator](#input-iterator)**
     * **[Forward Iterator](#forward-iterator)**
     * **[Bidirectional Iterator](#bidirectional-iterator)**
     * **[Random Access Iterator](#random-access-iterator)**
@@ -55,7 +55,7 @@ Depending on functionality they implemented Iterators are classified into five c
 **`Input <-- Forward <-- Bidirectional <-- Random Access`**  
 **`Output`**
 
-**Forward** has properties of **Input** and **Output** and in addition its own.  
+**Forward** has properties of **Input** and **Output** (if it is not constant) and in addition its own.  
 **Bidirectional** has properties of **Forward** and in addition its own.  
 **Random Access** has properties of **Bidirectional** and in addition its own.  
 
@@ -84,21 +84,82 @@ It has to have a default constructor, copy constructor and operators: =, ++.
 
 ### Output Iterator
 
-Properties:
+Additional Properties:
   * Can be dereferenced as an lvalue (if in a dereferenceable state).  
     ```
-    *It shall only be dereferenced as the left-side of an assignment statement.*  
-    *Once dereferenced, its iterator value may no longer be dereferenceable.*  
+     It shall only be dereferenced as the left-side of an assignment statement.  
+     Once dereferenced, its iterator value may no longer be dereferenceable.  
     ```
 
 ### Input Iterator
 
-Properties:
+Additional Properties:
+  * Can be compared for equivalence using the equality/inequality operators (meaningful if both iterators are be in domain).
+   ```
+     a == b
+     a != b
+   ```
   * Can be dereferenced as an rvalue (if in a dereferenceable state).
     ```cpp
-    	*a
+    	*a 
       a->m
     ```
+  * Its value type does not need to be assignable.
+   ```cpp
+     t = u  // not required
+   ```
+  * Lvalues are swappable.
+  ```cpp
+    	swap(a,b);
+  ```
+### Forward Iterator
+
+Forward iterators are iterators that you can go forward only from the begining to the end in the range you indicate.  
+  
+Forward Iterators are also valid input and output iterators.  
+
+### Bidirectional Iterator
+
+Bidirectional Iterator can be used to go through the collection in a range in both directions.  
+
+Additional Properties:  
+ * Can be decremented (if a dereferenceable iterator value precedes it).  
+  ```cpp
+     --a;
+     a--;
+    *a--;
+  ```  
+  
+All bidirectional iterators are also valid forward and input iterators.  
+
+### Random Acess Iterator
+
+With help Random Access Iterator you can access elements at an arbitrary offset position relative to the one it pointing to.  
+
+It offers the same functionality as pointers.  
+
+Additional Properties:  
+ * Supports the arithmetic operators `+` and `-` between an iterator and an integer value, or subtracting an iterator from another.
+  ```cpp
+  a + n;
+  n + a;
+  a - n;
+  a - b;
+  ```  
+ * Can be compared with inequality relational operators `<, >, <= and >=`.
+  ```cpp
+  a < b;
+  a > b;
+  a <= b;
+  a >= b;
+  ``` 
+ * Supports compound assignment operations `+=` and `-=`.
+  ```cpp
+   a += n;
+   a -= n;
+  ```  
+ * Supports the offset dereference operator `[]`.
+  
 
 
 ## How To Use
