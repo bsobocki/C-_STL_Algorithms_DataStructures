@@ -14,7 +14,7 @@ class set;
 
 Container that store unique elements following specific order.
 
-constructors:
+constructors:  
            * empty set (default constructor),  
            * range (std::set\<T\>(container.begin(), container.end()))  
 
