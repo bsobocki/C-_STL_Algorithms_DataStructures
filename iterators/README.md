@@ -39,6 +39,8 @@ This README.md file has been created based on information from [`cplusplus.com`]
 The Idea of Iterators is to improve and to facilitate work on collections.  
 It gives the opportunity to move to the element in the collection and to do something with it without knowing its structure.  
 
+All iterable structures has a specific iterator type designed to iterate through its elements.  
+
 ## More About Iterators
 
 One of forms of iterator is an pointer, because it can point an element in array, and iterate through the array by increment operator ++.
@@ -86,7 +88,9 @@ It has to have a default constructor, copy constructor and operators: `=`, `++`.
 
 ### Output Iterator
 
-Additional Properties:
+The output iterator can be useful when you need to be sure that the collection will not be read, but only overwritten.  
+
+Additional Properties:  
   * Can be dereferenced as an lvalue (if in a dereferenceable state).  
     ```
      It shall only be dereferenced as the left-side of an assignment statement.  
@@ -94,6 +98,8 @@ Additional Properties:
     ```
 
 ### Input Iterator
+
+The input iterator can be useful when you need to be sure that the collection will not be overwritten, but only read.  
 
 Additional Properties:
   * Can be compared for equivalence using the equality/inequality operators (meaningful if both iterators are be in domain).
@@ -118,12 +124,17 @@ Additional Properties:
 
 Forward iterators are iterators that you can go only forward from the beginning to the end in the indicated range.   
 They are limited to one direction in which to iterate through a range (forward).  
+
+This type of iterators can be useful if you must go through the collection one by one (for example printing the collection, change values, or building a new one based on the collection.
   
 Forward Iterators are also valid input and output(if it is not constant) iterators.  
 
 ### Bidirectional Iterator
 
-Bidirectional Iterator can be used to go through the collection in a range in both directions.  
+Bidirectional Iterator can be used to go through the collection in a range in both directions by incrementing and decrementing it (using `++` and `--`).  
+
+This type of iterators can be useful if you must go through the collection one by one in both directions.  
+For example printing or changing all values from the collection in the collection and in the reverse order.  
 
 Additional Properties:  
  * Can be decremented (if a dereferenceable iterator value precedes it).  
@@ -135,11 +146,15 @@ Additional Properties:
   
 All bidirectional iterators are also valid forward iterators.  
 
-### Random Acess Iterator
+### Random Access Iterator
 
 With help Random Access Iterator you can access elements at an arbitrary offset position relative to the one it pointing to.  
 
 It offers the same functionality as pointers.  
+
+You can use it, among others, when you need to go through the collection not only one by one,  
+but for example through an elements with even indexes,  
+or when you need to have a possibility to get the element on n-th position (n = 1, 2, ... , collection.size() ).  
 
 Additional Properties:  
  * Supports the arithmetic operators `+` and `-` between an iterator and an integer value, or subtracting an iterator from another.
@@ -168,6 +183,34 @@ Additional Properties:
 All random access iterators also valid bidirectional iterators.  
 
 ## How To Use
+
+Examples of use:
+ * printing elements using [**range-based for statement**](https://docs.microsoft.com/en-us/cpp/cpp/range-based-for-statement-cpp?view=vs-2019):  
+  ```cpp
+  std::array<char, 9> chars = {'a', 'b', 'c', 'd', 'e', 'f'};
+  
+  // you can use 'auto' instead 'char'
+  for(auto chr: chars)
+   std::cout<<chr<<std::endl;
+  ```
+ * sorting elements *(do something with collection in range \[start, end\))*:
+  ```cpp
+  std::vector<int> ints = {9, 3, 7, 2, 0, 8, 1, 5, 4, 6};
+  // get the iterator of std::vector<int> pointing on the first element(start) and the last one (end)
+  std::vector<int>::iterator start = ints.begin();
+  // if you want, you can use 'auto' instead 'std::vector<int>::iterator'
+  auto end = ints.end();
+  
+  // sort elements in range [start, end)
+  std::sort(start, end);
+  
+  // sorting elements in range [second, eighth] 
+  // 'end' given as the second argument in std::sort does not belong to the sorting range
+  std::sort(start+2, start+8);
+  
+  // now ints == {9, 3,   0, 1, 2, 5, 7, 8,   4, 6}
+  ```
+
 ## Operations
 ## Get Iterator
 ### begin
