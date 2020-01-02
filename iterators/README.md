@@ -95,23 +95,23 @@ Additional Properties:
 
 Additional Properties:
   * Can be compared for equivalence using the equality/inequality operators (meaningful if both iterators are be in domain).
-   ```
-     a == b
-     a != b
-   ```
-  * Can be dereferenced as an rvalue (if in a dereferenceable state).
-    ```cpp
-    	*a 
-      a->m
     ```
-  * Its value type does not need to be assignable.
-   ```cpp
-     t = u  // not required
-   ```
-  * Lvalues are swappable.
-  ```cpp
-    	swap(a,b);
-  ```
+    a == b
+    a != b
+    ```
+  * Can be dereferenced as an rvalue (if in a dereferenceable state).  
+    ```cpp
+     *a 
+     a->m
+    ```
+  * Its value type does not need to be assignable.  
+    ```cpp
+    t = u  // not required
+    ```
+  * Lvalues are swappable.  
+    ```cpp
+    swap(a,b);
+    ```
 ### Forward Iterator
 
 Forward iterators are iterators that you can go forward only from the begining to the end in the range you indicate.  
