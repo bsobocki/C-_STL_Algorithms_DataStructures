@@ -72,15 +72,17 @@ All categories have properties:
     *a++ = t;
     ```  
     
+**Constant Iterators** are iterators that do not fulfill the requirements fo an **output iterators**. Dereferencing them yields a reference to a constant element (such as ***const** T &*).  
+    
 ### Input and Output Iterator
 
-> Input and Output iterators are iterators that can be used in sequential input/output operations, where each value pointed by the iterator is read(*Input*)/written(*Output*) only once and then the iterator is incremented.
+> **Input**(*I*) and **Output**(*O*) iterators are iterators that can be used in sequential **input**(*I*)/**output**(*O*) operations, where each value pointed by the iterator is **read**(*I*)/**written**(*O*) only once and then the iterator is incremented.
 >
 > ~~ ***cplusplus.com***
 
-This iterators type only allow reading/writing values from/to a given component.  
-You cannot writing/reading values from elements pointed by this iterator.  
-It has to have a default constructor, copy constructor and operators: =, ++.
+This iterators type only allow **reading**(*I*)/**writing**(*O*) values **from**(*I*)/**to**(*O*) a given component.  
+You cannot **writing**(*I*)/**reading**(*O*) values from elements pointed by this iterator.  
+It has to have a default constructor, copy constructor and operators: `=`, `++`.
 
 ### Output Iterator
 
@@ -114,9 +116,10 @@ Additional Properties:
     ```
 ### Forward Iterator
 
-Forward iterators are iterators that you can go forward only from the begining to the end in the range you indicate.  
+Forward iterators are iterators that you can go only forward from the beginning to the end in the indicated range.   
+They are limited to one direction in which to iterate through a range (forward).  
   
-Forward Iterators are also valid input and output iterators.  
+Forward Iterators are also valid input and output(if it is not constant) iterators.  
 
 ### Bidirectional Iterator
 
@@ -124,13 +127,13 @@ Bidirectional Iterator can be used to go through the collection in a range in bo
 
 Additional Properties:  
  * Can be decremented (if a dereferenceable iterator value precedes it).  
-  ```cpp
-     --a;
-     a--;
+   ```cpp
+    --a;
+    a--;
     *a--;
-  ```  
+   ```  
   
-All bidirectional iterators are also valid forward and input iterators.  
+All bidirectional iterators are also valid forward iterators.  
 
 ### Random Acess Iterator
 
@@ -140,27 +143,29 @@ It offers the same functionality as pointers.
 
 Additional Properties:  
  * Supports the arithmetic operators `+` and `-` between an iterator and an integer value, or subtracting an iterator from another.
-  ```cpp
-  a + n;
-  n + a;
-  a - n;
-  a - b;
-  ```  
+   ```cpp
+   a + n;
+   n + a;
+   a - n;
+   a - b;
+   ```  
  * Can be compared with inequality relational operators `<, >, <= and >=`.
-  ```cpp
-  a < b;
-  a > b;
-  a <= b;
-  a >= b;
-  ``` 
+   ```cpp
+   a < b;
+   a > b;
+   a <= b;
+   a >= b;
+   ``` 
  * Supports compound assignment operations `+=` and `-=`.
-  ```cpp
+   ```cpp
    a += n;
    a -= n;
-  ```  
+   ```  
  * Supports the offset dereference operator `[]`.
-  
-
+   ```cpp
+   a[n]
+   ```
+All random access iterators also valid bidirectional iterators.  
 
 ## How To Use
 ## Operations
