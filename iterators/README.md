@@ -280,8 +280,8 @@ You can use it to check how big is your subset from `first` to `last`:
 ```cpp
 template <class Iter, typename T>
 Iter move_to_value(Iter begin, Iter end, const T & val){
-    while(begin != end && *begin != val)   it++;
-    return it;
+    while(begin != end && *begin != val)   begin++;
+    return begin;
 }
 ```  
   
