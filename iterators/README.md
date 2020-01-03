@@ -185,14 +185,27 @@ All random access iterators also valid bidirectional iterators.
 ## How To Use
 
 Examples of use:
- * printing elements using [**range-based for statement**](https://docs.microsoft.com/en-us/cpp/cpp/range-based-for-statement-cpp?view=vs-2019):  
-  ```cpp
-  std::array<char, 9> chars = {'a', 'b', 'c', 'd', 'e', 'f'};
-  
-  // you can use 'auto' instead 'char'
-  for(auto chr: chars)
-   std::cout<<chr<<std::endl;
-  ```
+ * printing elements:
+   * using [**range-based for statement**](https://docs.microsoft.com/en-us/cpp/cpp/range-based-for-statement-cpp?view=vs-2019):  
+     ```cpp
+     std::array<char, 9> chars = {'a', 'b', 'c', 'd', 'e', 'f'};
+
+     // to use ranged-based for statement the collection must be iterable
+     // you can use 'auto' instead 'char'
+     for(auto chr: chars)
+       std::cout<<chr<<std::endl;
+     ```
+    * using for loop:
+     ```cpp
+     std::vector<int> ints = {3, 2, 1, 4, 7, 9, 3, 1, 6};
+
+     // 'auto' to deduce type std::vector<int>::iterator
+     // ints.end() is the iterator pointing the virtual element following the last one
+     for(auto iter = ints.begin(); iter != ints.end(); iter++){
+       // using operator * we can get the value of the element pointed by 'iter' 
+       std::cout<< *iter << std::endl; // dereferencing the iterator
+     }
+    ```
  * doing something with collection in given range \[start_range, end_range\)  
    *for example sorting elements in ascending order*:
   ```cpp
