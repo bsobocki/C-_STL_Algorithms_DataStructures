@@ -196,37 +196,37 @@ Examples of use:
        std::cout<<chr<<std::endl;
      ```
     * using for loop:
-     ```cpp
-     std::vector<int> ints = {3, 2, 1, 4, 7, 9, 3, 1, 6};
+      ```cpp
+      std::vector<int> ints = {3, 2, 1, 4, 7, 9, 3, 1, 6};
 
-     // 'auto' to deduce type std::vector<int>::iterator
-     // ints.end() is the iterator pointing the virtual element following the last one
-     for(auto iter = ints.begin(); iter != ints.end(); iter++){
-       // using operator * we can get the value of the element pointed by 'iter' 
-       std::cout<< *iter << std::endl; // dereferencing the iterator
-     }
-    ```
+      // 'auto' to deduce type std::vector<int>::iterator
+      // ints.end() is the iterator pointing the virtual element following the last one
+      for(auto iter = ints.begin(); iter != ints.end(); iter++){
+        // using operator * we can get the value of the element pointed by 'iter' 
+        std::cout<< *iter << std::endl; // dereferencing the iterator
+      }
+     ```
  * doing something with collection in given range \[start_range, end_range\)  
    *for example sorting elements in ascending order*:
-  ```cpp
-  std::vector<int> ints = {9, 3, 7, 2, 0, 8, 1, 5, 4, 6};
-  // get the iterator of std::vector<int> pointing on the first element(start) and the last one (end)
-  std::vector<int>::iterator start_range = ints.begin();
-  // if you want, you can use 'auto' instead 'std::vector<int>::iterator'
-  auto end_range = ints.end();
-  
-  // sort elements in range [start, end)
-  std::sort(start_range, end_range);
-  
-  end_range = start_range + 8;
-  start_range += 2;
-  
-  // sorting elements in range [second, eighth] 
-  // 'end' given as the second argument in std::sort does not belong to the sorting range
-  std::sort(start_range, end_range);
-  
-  // now ints == {9, 3,   0, 1, 2, 5, 7, 8,   4, 6}
-  ```
+   ```cpp
+   std::vector<int> ints = {9, 3, 7, 2, 0, 8, 1, 5, 4, 6};
+   // get the iterator of std::vector<int> pointing on the first element(start) and the last one (end)
+   std::vector<int>::iterator start_range = ints.begin();
+   // if you want, you can use 'auto' instead 'std::vector<int>::iterator'
+   auto end_range = ints.end();
+
+   // sort elements in range [start, end)
+   std::sort(start_range, end_range);
+
+   end_range = start_range + 8;
+   start_range += 2;
+
+   // sorting elements in range [second, eighth] 
+   // 'end' given as the second argument in std::sort does not belong to the sorting range
+   std::sort(start_range, end_range);
+
+   // now ints == {9, 3,   0, 1, 2, 5, 7, 8,   4, 6}
+   ```
  * create a new std::unordered_set<int> from std::vector<int>:
    ```cpp
    std::vector<int> ints = {1, 1, 2, 3, 2, 7, 5, 8, 9, 5, 3, 2, 0};
