@@ -278,16 +278,27 @@ As the name implies, std::distance calculates the distance (number of elements) 
 You can use it to check how big is your subset from `first` to `last`:  
 
 ```cpp
-  std::vector<char> chars = {'a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 't', 'u', 'v', 'w', 'x', 'y', 'z'};
-
-  auto c_iter = move_to_value(chars.begin(), chars.end(), 'c');
-  auto o_iter = move_to_value(chars.begin(), chars.end(), 'o');
+template <class Iter, typename T>
+Iter move_to_value(Iter begin, Iter end, const T & val){
+    while(begin != end && *begin != val)   it++;
+    return it;
+}
+```  
   
-  std::cout<<"number of elements form 'c' to 'o' = "<<std::distance(c_iter, o_iter)<<std::endl;
+  
+```cpp
+std::vector<char> chars = {'a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 't', 'u', 'v', 'w', 'x', 'y', 'z'};
+
+auto c_iter = move_to_value(chars.begin(), chars.end(), 'c');
+auto o_iter = move_to_value(chars.begin(), chars.end(), 'o');
+
+std::cout<<"number of elements form 'c' to 'o' = "<< std::distance(c_iter, o_iter) <<std::endl;
+std::cout<<"number of elements form 'c' to 'o' = "<< o_iter - c_iter <<std::endl;
 ```
 Output:  
 
 ```
+number of elements form 'c' to 'o' = 12
 number of elements form 'c' to 'o' = 12
 ```
 
