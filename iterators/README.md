@@ -205,7 +205,8 @@ Examples of use:
         // using operator * we can get the value of the element pointed by 'iter' 
         std::cout<< *iter << std::endl; // dereferencing the iterator
       }
-     ```
+      ```  
+     
  * doing something with collection in given range \[start_range, end_range\)  
    *for example sorting elements in ascending order*:
    ```cpp
