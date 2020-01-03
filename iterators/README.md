@@ -12,6 +12,13 @@ This README.md file has been created based on information from [`cplusplus.com`]
     * **[Random Access Iterator](#random-access-iterator)**
   * **[How To Use](#how-to-use)**
   * **[Operations](#operations)**
+    * **[advance](#advance)**
+  * **[Iterator Generators](#iterator-generators)**
+    * **[back_inserter](#back_inserter)**
+    * **[front_inserter](#front_inserter)**
+    * **[inserter](#inserter)**
+    * **[make_move_iterator](#make_move_iterator)**
+  * **[Predefined iterators](#predefined-iterators)**
   * **[Get iterator](#get-iterator)**
     * **[begin](#begin)**
     * **[cbegin](#cbegin)**
@@ -21,12 +28,6 @@ This README.md file has been created based on information from [`cplusplus.com`]
     * **[rend](#rend)**
     * **[crbegin](#crbegin)**
     * **[crend](#crend)**
-  * **[Iterator Generators](#iterator-generators)**
-    * **[back_inserter](#back_inserter)**
-    * **[front_inserter](#front_inserter)**
-    * **[inserter](#inserter)**
-    * **[make_move_iterator](#make_move_iterator)**
-  * **[Predefined iterators](#predefined-iterators)**
 
 ## Description
 
@@ -211,22 +212,25 @@ Examples of use:
    *for example sorting elements in ascending order*:
    ```cpp
    std::vector<int> ints = {9, 3, 7, 2, 0, 8, 1, 5, 4, 6};
-   // get the iterator of std::vector<int> pointing on the first element(start) and the last one (end)
-   std::vector<int>::iterator start_range = ints.begin();
+   // get the iterator of std::vector<int> pointing on the first element(start) and the last one(end)
+   std::vector<int>::iterator start = ints.begin();
    // if you want, you can use 'auto' instead 'std::vector<int>::iterator'
-   auto end_range = ints.end();
+   auto end = ints.end();
 
-   // sort elements in range [start, end)
-   std::sort(start_range, end_range);
-
-   end_range = start_range + 8;
-   start_range += 2;
+   auto end_range = start + 8; // ninth position
+   auto start_range += start + 2; // third position
 
    // sorting elements in range [second, eighth] 
-   // 'end' given as the second argument in std::sort does not belong to the sorting range
+   // 'end' given as the second argument in std::sort does not belong to the sorting range 
+   // so in this case the ninth position does not belong to the sorting range
    std::sort(start_range, end_range);
 
    // now ints == {9, 3,   0, 1, 2, 5, 7, 8,   4, 6}
+
+   // sort elements in range [start, end)
+   std::sort(start, end);
+   
+   // now ints == {0, 1, 2, 3, 4, 5, 6, 7, 8, 9}
    ```
  * create a new std::unordered_set<int> from std::vector<int>:
    ```cpp
@@ -235,14 +239,66 @@ Examples of use:
    ```
 
 ## Operations
-## Get Iterator
-### begin
-### end
-### rbegin
-### rend
+
+### advance
+
+Advances the iterator it by n element positions.    
+
+For **Random Access Iterator** this function call operator `+` or `-` just once for the second argument to move *the iterator*.    
+For other iterators types this function call operator `++` or `--`  until n elements have been advanced.   
+
+Example:
+
+```cpp
+std::vector<int> ints = {9, 3, 7, 2, 0, 8, 1, 5, 4, 6};
+std::vector<int>::iterator start = ints.begin();
+
+std::cout<<"first element = "<<*start<<std::endl;
+
+std::advance(start, 6);
+
+std::cout<<"seventh element = "<<*start<<std::endl;
+```  
+
+Output:
+
+```
+first element = 9
+seventh element = 1
+```
+
+**Complexity**:   
+Constant for random-access iterators.  
+Otherwise, linear in n.  
+
+### distance
+
+As the name implies, std::distance calculates the distance (number of elements) between two iterators.  
+
+You can use it to check how big is your subset from `first` to `last`:  
+
+```cpp
+  std::vector<char> chars = {'a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 't', 'u', 'v', 'w', 'x', 'y', 'z'};
+
+  auto c_iter = move_to_value(chars.begin(), chars.end(), 'c');
+  auto o_iter = move_to_value(chars.begin(), chars.end(), 'o');
+  
+  std::cout<<"number of elements form 'c' to 'o' = "<<std::distance(c_iter, o_iter)<<std::endl;
+```
+Output:  
+
+```
+number of elements form 'c' to 'o' = 12
+```
+
 ## Iterator Generators
 ### back_inserter
 ### front_inserter
 ### inserter
 ### make_move_iterator
 ## Predefined iterators
+## Get Iterator
+### begin
+### end
+### rbegin
+### rend
