@@ -14,6 +14,8 @@ This README.md file has been created based on information from [`cplusplus.com`]
   * **[Operations](#operations)**
     * **[advance](#advance)**
     * **[distance](#distance)**
+    * **[prev](#prev)**
+    * **[next](#next)**
   * **[Iterator Generators](#iterator-generators)**
     * **[back_inserter](#back_inserter)**
     * **[front_inserter](#front_inserter)**
@@ -21,14 +23,10 @@ This README.md file has been created based on information from [`cplusplus.com`]
     * **[make_move_iterator](#make_move_iterator)**
   * **[Predefined iterators](#predefined-iterators)**
   * **[Get iterator](#get-iterator)**
-    * **[begin](#begin)**
-    * **[cbegin](#cbegin)**
-    * **[end](#end)**
-    * **[cend](#cend)**
-    * **[rbegin](#rbegin)**
-    * **[rend](#rend)**
-    * **[crbegin](#crbegin)**
-    * **[crend](#crend)**
+    * **[begin and end](#begin_and_end)**
+    * **[cbegin and cend](#cbegin_and_cend)**
+    * **[rbegin and rend](#rbegin_and_rend)**
+    * **[crbegin and crend](#crbegin_and_crend)**
 
 ## Description
 
@@ -441,15 +439,23 @@ Output:
 ```
 u_set is equal: { 8 1 7 5 2 4 }
 ```
+**Complexity**:  
+Constant for random-access iterators.  
+Otherwise, linear in n.  
 
 ## Iterator Generators
+
+You can use iterators not only for get elements from the collection. It can also be used to push back or push front some elements to the container and to move elements.  
+
 ### back_inserter
+
+
 ### front_inserter
 ### inserter
 ### make_move_iterator
 ## Predefined iterators
 ## Get Iterator
-### begin
-### end
-### rbegin
-### rend
+### begin and end
+### cbegin and cend
+### rbegin and rend
+### crbegin and crend
