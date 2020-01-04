@@ -430,7 +430,7 @@ std::unordered_set<int> u_set = {4, 2, 5, 7, 1, 8, 8};
 
 std::cout<<"u_set is equal: { ";
 std::for_each(std::begin(u_set), 
-              std::next(u_set.begin(), u_set.size()),
+              std::next(u_set.begin(), u_set.size()),  // <----- std::next -> begin + size() -> end() 
               [](int i){ std::cout<<i<<" ";});
 std::cout<<"}"<<std::endl;
 ```
