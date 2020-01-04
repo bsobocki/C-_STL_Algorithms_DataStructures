@@ -297,7 +297,7 @@ You can use it to check how big is your subset from `first` to `last`:
 
 ```cpp
 template <class Iter, typename T>
-Iter move_to_value(Iter begin, Iter end, const T & val){
+Iter get_iter_with_value(Iter begin, Iter end, const T & val){
     while(begin != end && *begin != val)   begin++;
     return begin;
 }
@@ -307,8 +307,8 @@ Iter move_to_value(Iter begin, Iter end, const T & val){
 ```cpp
 std::vector<char> chars = {'a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 't', 'u', 'v', 'w', 'x', 'y', 'z'};
 
-auto c_iter = move_to_value(chars.begin(), chars.end(), 'c');
-auto o_iter = move_to_value(chars.begin(), chars.end(), 'o');
+auto c_iter = get_iter_with_value(chars.begin(), chars.end(), 'c');
+auto o_iter = get_iter_with_value(chars.begin(), chars.end(), 'o');
 
 std::cout<<"number of elements form 'c' to 'o' = "<< std::distance(c_iter, o_iter) <<std::endl;
 // only for random access iterators
