@@ -16,12 +16,12 @@ This README.md file has been created based on information from [`cplusplus.com`]
     * **[distance](#distance)**
     * **[prev](#prev)**
     * **[next](#next)**
+  * **[Predefined iterators](#predefined-iterators)**
   * **[Iterator Generators](#iterator-generators)**
     * **[back_inserter](#back_inserter)**
     * **[front_inserter](#front_inserter)**
     * **[inserter](#inserter)**
     * **[make_move_iterator](#make_move_iterator)**
-  * **[Predefined iterators](#predefined-iterators)**
   * **[Get iterator](#get-iterator)**
     * **[begin and end](#begin_and_end)**
     * **[cbegin and cend](#cbegin_and_cend)**
@@ -253,7 +253,7 @@ Examples of use:
    std::vector<int> ints = {1, 1, 2, 3, 2, 7, 5, 8, 9, 5, 3, 2, 0};
    std::unordered_set<int> set(ints.begin(), ints.end());
    ```
-
+  
 ## Operations
 
 ### advance
@@ -443,17 +443,59 @@ u_set is equal: { 8 1 7 5 2 4 }
 Constant for random-access iterators.  
 Otherwise, linear in n.  
 
+
+## Predefined iterators
+
+### back_insert_iterator
+
+*back_insert_iterators* are special *output iterators*, that allow algorithms which usually overwite elements in container (for example **std::copy**) to instead insert new elements at the end (using ***push_back()***).  
+
+Obviously, the container needs to have member function *push_back()*.  
+
+The best way to show how it works is to show the example of use (with std::transform and std::copy)!  
+  
+Example:  
+```cpp
+// std::back_inserter returns the back_insert_iterator of the container given as argument
+
+std::vector<short> source = {1, 4, 3, 5, 3, 56};
+std::vector<short> result;
+std::transform(source.begin(), source.end(), std::back_inserter(result), [](const short & i) {return i*i;});
+
+std::cout<<"result : ";
+for(auto x : result) std::cout<<x<<" ";
+std::cout<<std::endl;
+
+std::vector<char> alphabet = {'a', 'b', 'c', 'd', 'e', 'f', 'g'};
+std::vector<char> chars = {'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p'};
+std::vector<char> chars2 = {'q', 'r' ,'s', 't', 'u', 'v', 'w', 'x', 'y', 'z'};
+
+auto alphabet_back_inserter = std::back_inserter(alphabet);
+
+std::copy(chars.begin(), chars.end(), alphabet_back_inserter);
+std::copy(chars2.begin(), chars2.end(), alphabet_back_inserter);
+
+
+std::cout<<"alphabet : ";
+for(auto x : alphabet) std::cout<<x<<" ";
+std::cout<<std::endl;
+```
+Ouput:  
+```
+result : 1 16 9 25 9 3136 
+alphabet : a b c d e f g h i j k l m n o p q r s t u v w x y z 
+```
 ## Iterator Generators
 
 You can use iterators not only for get elements from the collection. They can also be used to push back or push front some elements to the container and to move elements.  
 
 ### back_inserter
 
+Connstructs a new back_inserter iterator. See [back_insert_iterator](#back_insert_iterator).
 
 ### front_inserter
 ### inserter
 ### make_move_iterator
-## Predefined iterators
 ## Get Iterator
 ### begin and end
 ### cbegin and cend
