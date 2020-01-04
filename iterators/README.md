@@ -328,7 +328,7 @@ Otherwise, linear in n.
   
 ---
 
-For examples in description about **begin** and **end**P:  
+For examples in description about **begin** and **end**:  
 ```cpp
 template <class Coll>
 void print_coll(Coll coll){
@@ -400,6 +400,7 @@ Returns an iterator pointing to the element that would be pointed to by the iter
 For *random access iterator* the function will call the operator `-`.  
 Otherwise it uses repeatedly the operator `++` or  `--` on the copied iterator until n elements have been advanced.  
 
+Example:  
 ```cpp
 std::vector<int> vec = {1, 8, 2, 5};
 
@@ -416,6 +417,30 @@ the element that is second from the end is equal 2
 **Complexity**:  
 O(1) for *random access iterators*  
 O(n) for *bidirectional iterators*
+
+### next
+
+Returns the iterator pointing to the element that would be pointed to by the iterator advanced by n positions.  
+
+
+For *random access iterator* the function will call the operator `+` or `-`.  
+Otherwise it uses repeatedly the operator `++` or  `--` on the copied iterator until n elements have been advanced.  
+
+Example:  
+```cpp
+std::unordered_set<int> u_set = {4, 2, 5, 7, 1, 8, 8};
+
+std::cout<<"u_set is equal: { ";
+std::for_each(std::begin(u_set), 
+              std::next(u_set.begin(), u_set.size()),
+              [](int i){ std::cout<<i<<" ";});
+std::cout<<"}"<<std::endl;
+```
+
+Output:  
+```
+u_set is equal: { 8 1 7 5 2 4 }
+```
 
 ## Iterator Generators
 ### back_inserter
