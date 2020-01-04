@@ -13,6 +13,7 @@ This README.md file has been created based on information from [`cplusplus.com`]
   * **[How To Use](#how-to-use)**
   * **[Operations](#operations)**
     * **[advance](#advance)**
+    * **[distance](#distance)**
   * **[Iterator Generators](#iterator-generators)**
     * **[back_inserter](#back_inserter)**
     * **[front_inserter](#front_inserter)**
@@ -185,6 +186,8 @@ All random access iterators also valid bidirectional iterators.
 
 ## How To Use
 
+If you want to browse the **vector\<int\>** *from beginning to end* you can use ***std::vector\<int\>::iterator*** but if you want to do it *from end to beginning* you can use ***std::vector\<int\>::reverse_iterator***.  
+
 Examples of use:
  * printing elements:
    * using [**range-based for statement**](https://docs.microsoft.com/en-us/cpp/cpp/range-based-for-statement-cpp?view=vs-2019):  
@@ -200,13 +203,28 @@ Examples of use:
       ```cpp
       std::vector<int> ints = {3, 2, 1, 4, 7, 9, 3, 1, 6};
 
+      std::cout<<"vector = ";
       // 'auto' to deduce type std::vector<int>::iterator
       // ints.end() is the iterator pointing the virtual element following the last one
-      for(auto iter = ints.begin(); iter != ints.end(); iter++){
+      for(auto iter = ints.begin(); iter != ints.end(); iter++)
         // using operator * we can get the value of the element pointed by 'iter' 
-        std::cout<< *iter << std::endl; // dereferencing the iterator
+        std::cout<< *iter  << "  "; // dereferencing the iterator
+      
+      std::cout<<std::endl;
+        
+      std::cout<<"reversed vector = ";
+       // print vector from end to beginning
+      for(std::vector<int>::reverse_iterator iter = ints.rbegin(); iter != ints.rend(); iter++)
+        std::cout<< *iter << "  ";
+        
+        std::cout<<std::endl;
       }
       ```  
+      Output:
+      ```
+      vector = 3  2  1  4  7  9  3  1  6  
+      reversed vector = 6  1  3  9  7  4  1  2  3  
+      ```
      
  * doing something with collection in given range \[start_range, end_range\)  
    *for example sorting elements in ascending order*:
@@ -275,6 +293,8 @@ Otherwise, linear in n.
 
 As the name implies, std::distance calculates the distance (number of elements) between two iterators.  
 
+For **random access iterators** the function uses operator `-`, but for other types of iterators it uses operator `++` repeatedly.  
+
 You can use it to check how big is your subset from `first` to `last`:  
 
 ```cpp
@@ -293,6 +313,7 @@ auto c_iter = move_to_value(chars.begin(), chars.end(), 'c');
 auto o_iter = move_to_value(chars.begin(), chars.end(), 'o');
 
 std::cout<<"number of elements form 'c' to 'o' = "<< std::distance(c_iter, o_iter) <<std::endl;
+// only for random access iterators
 std::cout<<"number of elements form 'c' to 'o' = "<< o_iter - c_iter <<std::endl;
 ```
 Output:  
@@ -301,6 +322,100 @@ Output:
 number of elements form 'c' to 'o' = 12
 number of elements form 'c' to 'o' = 12
 ```
+**Complexity**:
+Constant for random-access iterators.  
+Otherwise, linear in n.  
+  
+---
+
+For examples in description about **begin** and **end**P:  
+```cpp
+template <class Coll>
+void print_coll(Coll coll){
+  std::cout<<"{  ";
+  for(auto elem : coll) std::cout<<elem<<"  ";
+  std::cout<<"}"<<std::endl;
+}
+```  
+
+### begin 
+
+Returns an iterator pointing to the first element in the sequence.
+
+Example:
+```cpp
+std::set<int> set = {3, 1, 4, 2, 5}; 
+
+std::cout<<"set == ";
+print_coll(set);
+
+auto set_beg = set.begin();
+auto std_beg = std::begin(set);
+
+std::cout<<"Is the value in the set pointed by set_beg equal to std_beg?\n";
+std::cout<<(*set_beg == *std_beg ? "Yes" : "No")<<std::endl;
+std::cout<<"set_beg == "<<*set_beg<<std::endl;
+std::cout<<"std_beg == "<<*std_beg<<std::endl;
+```  
+Output:  
+```
+set == {  1  2  3  4  5  }
+Is the value in the set pointed by set_beg equal to std_beg?
+Yes
+set_beg == 1
+std_beg == 1
+```
+
+### end
+
+Returns an iterator pointing to the past-the-end element in the sequence.
+
+
+Example:
+```cpp
+std::set<int> set = {3, 1, 4, 2, 5}; 
+std::vector<int> vec;
+
+for(auto it = std::begin(set); it != std::end(set); it++)
+    vec.push_back(*it * *it);
+
+std::cout<<"set == ";
+print_coll(set);
+std::cout<<"vec == ";
+print_coll(vec);
+```
+
+Output:
+```
+set == {  1  2  3  4  5  }
+vec == {  1  4  9  16  25  }
+```
+
+If the collection `coll` is empty then `std::begin(coll) == std::end(coll)`.  
+
+### prev
+
+Returns an iterator pointing to the element that would be pointed to by the iterator advanced by -n positions.  
+
+For *random access iterator* the function will call the operator `-`.  
+Otherwise it uses repeatedly the operator `++` or  `--` on the copied iterator until n elements have been advanced.  
+
+```cpp
+std::vector<int> vec = {1, 8, 2, 5};
+
+auto second_from_end = std::prev(vec.end(), 2);
+
+std::cout<<"the element that is second from the end is equal "<<*second_from_end<<std::endl;
+```  
+
+Output:  
+```
+the element that is second from the end is equal 2
+```  
+
+**Complexity**:  
+O(1) for *random access iterators*  
+O(n) for *bidirectional iterators*
 
 ## Iterator Generators
 ### back_inserter
