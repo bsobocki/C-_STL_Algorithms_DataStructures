@@ -445,7 +445,7 @@ Otherwise, linear in n.
 
 ## Iterator Generators
 
-You can use iterators not only for get elements from the collection. It can also be used to push back or push front some elements to the container and to move elements.  
+You can use iterators not only for get elements from the collection. They can also be used to push back or push front some elements to the container and to move elements.  
 
 ### back_inserter
 
