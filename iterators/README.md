@@ -17,8 +17,10 @@ This README.md file has been created based on information from [`cplusplus.com`]
     * **[prev](#prev)**
     * **[next](#next)**
   * **[Predefined iterators](#predefined-iterators)**
+    * **[insert_iterator](#insert_iterator)**
     * **[back_insert_iterator](#back_insert_iterator)**
     * **[front_insert_iterator](#front_insert_iterator)**
+    * **[move_iterator](#move_iterator)**
   * **[Iterator Generators](#iterator-generators)**
     * **[back_inserter](#back_inserter)**
     * **[front_inserter](#front_inserter)**
@@ -448,6 +450,17 @@ Otherwise, linear in n.
 
 ## Predefined iterators
 
+
+Declaration of function to print collection:
+```cpp
+template <class Iterable>
+void print(const Iterable & coll){
+    std::cout<<"{ ";
+    for(auto elem : coll) std::cout<<elem<<" ";
+    std::cout<<"}";
+}
+```
+
 ### All types of insert iterators
 
 #### member types
@@ -478,16 +491,6 @@ This iterators types have following member functions:
 The container needs to have an `insert` member function (such as most standard containers).  
 
 See example to better understand insert_iterator:
-
-print collection:
-```cpp
-template <class Iterable>
-void print(const Iterable & coll){
-    std::cout<<"{ ";
-    for(auto elem : coll) std::cout<<elem<<" ";
-    std::cout<<"}";
-}
-```
 ```cpp
 //                       begin +1   +2   +3   +4   +5  +6
 //                         v    v    v    v    v    v   V
@@ -525,9 +528,7 @@ std::vector<short> source = {1, 4, 3, 5, 3, 56};
 std::vector<short> result;
 std::transform(source.begin(), source.end(), std::back_inserter(result), [](const short & i) {return i*i;});
 
-std::cout<<"result : ";
-for(auto x : result) std::cout<<x<<" ";
-std::cout<<std::endl;
+std::cout<<"result : "; print(result);
 
 std::vector<char> alphabet = {'a', 'b', 'c', 'd', 'e', 'f', 'g'};
 std::vector<char> chars = {'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p'};
@@ -539,9 +540,7 @@ std::copy(chars.begin(), chars.end(), alphabet_back_inserter);
 std::copy(chars2.begin(), chars2.end(), alphabet_back_inserter);
 
 
-std::cout<<"alphabet : ";
-for(auto x : alphabet) std::cout<<x<<" ";
-std::cout<<std::endl;
+std::cout<<"alphabet : "; print(alphabet);
 ```
 Ouput:  
 ```
@@ -567,9 +566,7 @@ std::deque<short> result;
 // because we will be pushing element at the beginning 
 std::transform(source.begin(), source.end(), std::front_inserter(result), [](const short & i) {return i*i;});
 
-std::cout<<"result : ";
-for(auto x : result) std::cout<<x<<" ";
-std::cout<<std::endl;
+std::cout<<"result : "; print(result);
 
  // at the beginning add to the alphabet letters from 'p' to 'h'
 std::deque<char> chars = {'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p'};
@@ -585,9 +582,7 @@ std::copy(chars.rbegin(), chars.rend(), alphabet_front_inserter);
 std::copy(chars2.rbegin(), chars2.rend(), alphabet_front_inserter);
 
 
-std::cout<<"alphabet : ";
-for(auto x : alphabet) std::cout<<x<<" ";
-std::cout<<std::endl;
+std::cout<<"alphabet : "; print(alphabet);
 ```
 
 Output:  
@@ -596,6 +591,24 @@ result : 3136 9 25 9 16 1
 alphabet : a b c d e f g h i j k l m n o p q r s t u v w x y z 
 ```
 
+### move_iterator
+
+```cpp
+std::deque<char> deq1 = { 'h', 'i', '!', '_', 'm', 'y', '_', 'n', 'a', 'm', 'e', '_'};
+std::deque<char> deq2 = { 'i', 's', '_', 'b', 'a', 'r', 't', 'o', 's', 'z'};
+
+std::copy ( std::make_move_iterator(deq2.begin()),
+            std::make_move_iterator(deq2.end()),
+            std::back_inserter(deq1));
+
+
+std::cout<<"deq1 = "; print(deq1);
+std::cout<<"deq2 = "; print(deq2);
+```
+Output: 
+```
+deq1 = { h i ! _ m y _ n a m e _ i s _ b a r t o s z } 
+```
 ## Iterator Generators
 
 You can use iterators not only for get elements from the collection. They can also be used to push back or push front some elements to the container and to move elements.  
@@ -613,6 +626,9 @@ Connstructs a new back_insert_iterator. See [back_insert_iterator](#back_insert_
 Constructs a new front_insert_iterator. See [front_insert_iterator](#front_insert_iterator).
 
 ### make_move_iterator
+
+Constructs a new move_iterator. See [move_iterator](#move_iterator).
+
 ## Get Iterator
 ### begin and end
 ### cbegin and cend
