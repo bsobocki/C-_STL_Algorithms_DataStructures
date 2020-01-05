@@ -448,13 +448,16 @@ Otherwise, linear in n.
 
 ## Predefined iterators
 
-### back_insert_iterator
+### front and back insert iterators
 
-*back_insert_iterators* are special *output iterators*, that allow algorithms which usually overwite elements in container (for example **std::copy**) to instead insert new elements at the end (using ***push_back()***).  
+This iterators types have following member functions:
+ * Constructor
+ * operators: 
+  * `=`
+  * `*`
+  * `++`
 
-Obviously, the container needs to have member function *push_back()*.  
-
-| ***member***	| ***definition*** in *back_insert_iterator* |
+| ***member***	| ***definition*** in *insert iterator* |
 |--------------|----------------------------------------------|
 | *iterator_category* |	**output_iterator_tag** |
 | *value_type* |	**void** |
@@ -462,6 +465,12 @@ Obviously, the container needs to have member function *push_back()*.
 | *pointer* |	**void** |
 | *reference* |	**void** |
 | *iterator_type* |	**void** |
+
+### back_insert_iterator
+
+*back_insert_iterators* are special *output iterators*, that allow algorithms which usually overwite elements in container (for example **std::copy**) to instead insert new elements at the end (using ***push_back()***).  
+
+Obviously, the container needs to have member function *push_back()*.  
 
 The best way to show how it works is to show the example of use (with std::transform and std::copy)!  
   
@@ -503,16 +512,7 @@ alphabet : a b c d e f g h i j k l m n o p q r s t u v w x y z
 
 Obviously, the container needs to have member function *push_front()*.  
 
-| ***member***	| ***definition*** in *front_insert_iterator* |
-|--------------|----------------------------------------------|
-| *iterator_category* |	**output_iterator_tag** |
-| *value_type* |	**void** |
-| *difference_type*	| **void** |
-| *pointer* |	**void** |
-| *reference* |	**void** |
-| *iterator_type* |	**void** |
-
-The example of use can be similar to the one above:  
+The example of use can be similar to the one above because functionality of both iterators types is similar:  
 ```cpp
 // std::front_inserter returns the front_insert_iterator of the container given as argument
 
