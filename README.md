@@ -2,14 +2,14 @@
 ## Algorithms and Containers 
 Review of C ++ STL algorithms and containers with examples of use.  
 
-### In the repository there are descriptions about: 
-### Iterators  
-### Algorithms:
-  - ___sorting___
-  - ___permutations___
-### Containers: 
-  - ___array___
-  - ___set___
+***The repository contains descriptions for*** : 
+  * ***Iterators***  
+  * ***Algorithms***
+    - ___sorting___
+    - ___permutations___
+  * ***Containers*** 
+    - ___array___
+    - ___set___
 ```cpp
 /* I'm working on it! */
 ```
