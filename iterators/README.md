@@ -454,6 +454,15 @@ Otherwise, linear in n.
 
 Obviously, the container needs to have member function *push_back()*.  
 
+| ***member***	| ***definition*** in *back_insert_iterator* |
+|--------------|----------------------------------------------|
+| *iterator_category* |	**output_iterator_tag** |
+| *value_type* |	**void** |
+| *difference_type*	| **void** |
+| *pointer* |	**void** |
+| *reference* |	**void** |
+| *iterator_type* |	**void** |
+
 The best way to show how it works is to show the example of use (with std::transform and std::copy)!  
   
 Example:  
@@ -493,6 +502,15 @@ alphabet : a b c d e f g h i j k l m n o p q r s t u v w x y z
 *front_insert_iterators* are special *output iterators*, that allow algorithms which usually overwite elements in container (for example **std::copy**) to instead insert new elements at the beggining (using ***push_front()***). 
 
 Obviously, the container needs to have member function *push_front()*.  
+
+| ***member***	| ***definition*** in *front_insert_iterator* |
+|--------------|----------------------------------------------|
+| *iterator_category* |	**output_iterator_tag** |
+| *value_type* |	**void** |
+| *difference_type*	| **void** |
+| *pointer* |	**void** |
+| *reference* |	**void** |
+| *iterator_type* |	**void** |
 
 The example of use can be similar to the one above:  
 ```cpp
