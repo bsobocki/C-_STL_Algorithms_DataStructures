@@ -17,6 +17,8 @@ This README.md file has been created based on information from [`cplusplus.com`]
     * **[prev](#prev)**
     * **[next](#next)**
   * **[Predefined iterators](#predefined-iterators)**
+    * **[back_insert_iterator](#back_insert_iterator)**
+    * **[front_insert_iterator](#front_insert_iterator)**
   * **[Iterator Generators](#iterator-generators)**
     * **[back_inserter](#back_inserter)**
     * **[front_inserter](#front_inserter)**
@@ -30,7 +32,7 @@ This README.md file has been created based on information from [`cplusplus.com`]
 
 ## Description
 
-> An *iterator* is any object that, pointing to some element in a range of elements (such as an array or a container), 
+> An *iterator* is any object that pointing to some element in a range of elements (such as an array or a container), 
 > has the ability to iterate through the elements of that range using a set of operators (with at least the increment (++) 
 > and dereference (*) operators). 
 >
@@ -43,7 +45,7 @@ All iterable structures has a specific iterator type designed to iterate through
 
 ## More About Iterators
 
-One of forms of iterator is an pointer, because it can point an element in array, and iterate through the array by increment operator ++.
+One of forms of iterators is an pointer, because it can point an element in array and iterate through the array by increment operator ++.
 
 While pointers are the form of iterators, not all iterators have the same functionally of pointers. 
 
@@ -484,16 +486,65 @@ Ouput:
 ```
 result : 1 16 9 25 9 3136 
 alphabet : a b c d e f g h i j k l m n o p q r s t u v w x y z 
+```  
+
+###  front_insert_iterator
+
+*front_insert_iterators* are special *output iterators*, that allow algorithms which usually overwite elements in container (for example **std::copy**) to instead insert new elements at the beggining (using ***push_front()***). 
+
+Obviously, the container needs to have member function *push_front()*.  
+
+The example of use can be similar to the one above:  
+```cpp
+// std::front_inserter returns the front_insert_iterator of the container given as argument
+
+std::deque<short> source = {1, 4, 3, 5, 3, 56}; 
+std::deque<short> result;
+
+// we don't use reverse_iterator
+// so the result will be in reversed order 
+// because we will be pushing element at the beginning 
+std::transform(source.begin(), source.end(), std::front_inserter(result), [](const short & i) {return i*i;});
+
+std::cout<<"result : ";
+for(auto x : result) std::cout<<x<<" ";
+std::cout<<std::endl;
+
+std::deque<char> chars2 = {'a', 'b', 'c', 'd', 'e', 'f', 'g'};
+std::deque<char> chars = {'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p'};
+std::deque<char> alphabet = {'q', 'r' ,'s', 't', 'u', 'v', 'w', 'x', 'y', 'z'};
+
+auto alphabet_front_inserter = std::front_inserter(alphabet);
+
+// use reverse_iterators to push front in reverse order
+// so the alphabet will have correct order 
+std::copy(chars.rbegin(), chars.rend(), alphabet_front_inserter);
+std::copy(chars2.rbegin(), chars2.rend(), alphabet_front_inserter);
+
+
+std::cout<<"alphabet : ";
+for(auto x : alphabet) std::cout<<x<<" ";
+std::cout<<std::endl;
 ```
+
+Output:  
+```
+result : 3136 9 25 9 16 1 
+alphabet : a b c d e f g h i j k l m n o p q r s t u v w x y z 
+```
+
 ## Iterator Generators
 
 You can use iterators not only for get elements from the collection. They can also be used to push back or push front some elements to the container and to move elements.  
 
 ### back_inserter
 
-Connstructs a new back_inserter iterator. See [back_insert_iterator](#back_insert_iterator).
+Connstructs a new back_insert_iterator. See [back_insert_iterator](#back_insert_iterator).
 
 ### front_inserter
+
+Constructs a new front_insert_iterator. See [front insert iterator](#front_insert_iterator).
+
 ### inserter
 ### make_move_iterator
 ## Get Iterator
