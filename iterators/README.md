@@ -448,7 +448,7 @@ Otherwise, linear in n.
 
 ## Predefined iterators
 
-### front and back insert iterators
+### All types of insert iterators
 
 #### member types
 
@@ -471,11 +471,49 @@ This iterators types have following member functions:
    * `++`
 
 
+### insert_iterator
+
+*insert_iterators* are special *output iterators*, that allow algorithms which usually overwite elements in container (for example **std::copy**) to instead insert new elements at the specific position in the container.
+
+The container needs to have an `insert` member function (such as most standard containers).  
+
+See example to better understand insert_iterator:
+
+print collection:
+```cpp
+template <class Iterable>
+void print(const Iterable & coll){
+    std::cout<<"{ ";
+    for(auto elem : coll) std::cout<<elem<<" ";
+    std::cout<<"}";
+}
+```
+```cpp
+//                       begin +1   +2   +3   +4   +5  +6
+//                         v    v    v    v    v    v   V
+std::list<char> chars = { '.', '.', '.', '.', '.', '.',   '#','#', '#', '#' };
+std::list<char> text_chars = {'a', 'w', 'e', 's', 'o', 'm', 'e', '_', 'e', 'x', 'a', 'm', 'p', 'l', 'e'}; 
+
+std::list<char>::iterator ch_iter = chars.begin();
+
+std::advance(ch_iter, 6);
+
+auto sixth_pos_inserter = std::inserter(chars, ch_iter);
+
+std::copy(text_chars.begin(), text_chars.end(), sixth_pos_inserter);
+
+std::cout<<" chars = "; print(chars);
+```
+Output: 
+```
+chars = { . . . . . . a w e s o m e _ e x a m p l e # # # # } 
+```
+
 ### back_insert_iterator
 
 *back_insert_iterators* are special *output iterators*, that allow algorithms which usually overwite elements in container (for example **std::copy**) to instead insert new elements at the end (using ***push_back()***).  
 
-Obviously, the container needs to have member function *push_back()*.  
+Obviously, the container needs to have member function `push_back`.  
 
 The best way to show how it works is to show the example of use (with std::transform and std::copy)!  
   
@@ -515,7 +553,7 @@ alphabet : a b c d e f g h i j k l m n o p q r s t u v w x y z
 
 *front_insert_iterators* are special *output iterators*, that allow algorithms which usually overwite elements in container (for example **std::copy**) to instead insert new elements at the beggining (using ***push_front()***). 
 
-Obviously, the container needs to have member function *push_front()*.  
+Obviously, the container needs to have member function `push_front`.  
 
 The example of use can be similar to the one above because functionality of both iterators types is similar:  
 ```cpp
@@ -562,15 +600,18 @@ alphabet : a b c d e f g h i j k l m n o p q r s t u v w x y z
 
 You can use iterators not only for get elements from the collection. They can also be used to push back or push front some elements to the container and to move elements.  
 
+### inserter
+
+Connstructs a new insert_iterator. See [insert_iterator](#insert_iterator).
+
 ### back_inserter
 
 Connstructs a new back_insert_iterator. See [back_insert_iterator](#back_insert_iterator).
 
 ### front_inserter
 
-Constructs a new front_insert_iterator. See [front insert iterator](#front_insert_iterator).
+Constructs a new front_insert_iterator. See [front_insert_iterator](#front_insert_iterator).
 
-### inserter
 ### make_move_iterator
 ## Get Iterator
 ### begin and end
