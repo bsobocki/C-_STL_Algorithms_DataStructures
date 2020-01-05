@@ -510,8 +510,10 @@ std::cout<<"result : ";
 for(auto x : result) std::cout<<x<<" ";
 std::cout<<std::endl;
 
-std::deque<char> chars2 = {'a', 'b', 'c', 'd', 'e', 'f', 'g'};
+ // at the beginning add to the alphabet letters from 'p' to 'h'
 std::deque<char> chars = {'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p'};
+// after that add at the beginning letters from 'g' to 'a'
+std::deque<char> chars2 = {'a', 'b', 'c', 'd', 'e', 'f', 'g'};
 std::deque<char> alphabet = {'q', 'r' ,'s', 't', 'u', 'v', 'w', 'x', 'y', 'z'};
 
 auto alphabet_front_inserter = std::front_inserter(alphabet);
