@@ -450,12 +450,7 @@ Otherwise, linear in n.
 
 ### front and back insert iterators
 
-This iterators types have following member functions:
- * Constructor
- * operators: 
-  * `=`
-  * `*`
-  * `++`
+#### member types
 
 | ***member***	| ***definition*** in *insert iterator* |
 |--------------|----------------------------------------------|
@@ -464,7 +459,17 @@ This iterators types have following member functions:
 | *difference_type*	| **void** |
 | *pointer* |	**void** |
 | *reference* |	**void** |
-| *iterator_type* |	**void** |
+| *iterator_type* |	**void** |  
+
+#### member functions
+
+This iterators types have following member functions:
+ * Constructor
+ * operators: 
+   * `=`
+   * `*`
+   * `++`
+
 
 ### back_insert_iterator
 
