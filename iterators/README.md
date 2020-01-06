@@ -663,7 +663,7 @@ iterator begin() noexcept;
 ```
 Returns an iterator to the first element.
 
-if the container is empty then arr.begin() == arr.end()
+if the container `c` is empty then `c.begin() == c.end()`
 
 #### end
 
@@ -697,7 +697,7 @@ reverse_iterator rbegin() noexcept;
 ```
 Returns an iterator to the first element of the reversed container.
 
-if the container is empty then arr.begin() == arr.end()
+if the container is empty then `c.rbegin() == c.rend()`
 
 #### rend
 
