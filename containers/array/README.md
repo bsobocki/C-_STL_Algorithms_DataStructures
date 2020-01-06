@@ -172,94 +172,11 @@ Output:
   6
   7
 ```  
-...  
+... 
 
-### begin 
-  
-```cpp
-iterator begin() noexcept;
-```
-Returns iterator to the first element.
+std::array has member functions returns iterators: `begin()`, `end()`, `rbegin()`, `rend()`, `cbegin()`, `cend()`, `crbegin()`, `crend()`.  
 
-if the container is empty then arr.begin() == arr.end()
-
-### end
-
-```cpp
-iterator end() noexcept;
-```
-Returns iterator to the element following the last element.
-
-### cbegin
-
-```cpp
-const_iterator cbegin() const noexcept;
-```  
-Returns const iterator to the first element.
-
-### cend
-
-```cpp
-const_iterator cend() const noexcept;
-```
-Returns const iterator to the element following the last element.
-
-## Reverse Iterators
-
-You can use them to pass through the container in reverse order.
-
-For example:
-```cpp
-  std::array<int, 7> arr = {1, 2, 3, 4, 5, 6, 7};
-  std::array<int, 7>::reverse_iterator it = arr.rbegin();
-  for(it; it != arr.rend(); it++) 
-    std::cout<<*it<<std::endl;
-```
-
-Output:
-```
-  7
-  6
-  5
-  4
-  3
-  2
-  1
-```  
-
-...  
-
-
-
-### rbegin 
-  
-```cpp
-reverse_iterator rbegin() noexcept;
-```
-Returns iterator to the first element of the reversed container.
-
-if the container is empty then arr.begin() == arr.end()
-
-### rend
-
-```cpp
-reverse_iterator rend() noexcept;
-```
-Returns iterator to the element following the last element of the reversed container.
-
-### crbegin
-
-```cpp
-const_reverse_iterator crbegin() const noexcept;
-```  
-Returns const reverse iterator to the first element of the reversed container.
-
-### crend
-
-```cpp
-const_reverse_iterator crend() const noexcept;
-```
-Returns const reverse iterator to the element following the last element of the reversed container.
+For more informations about *Iterators* check ["Get iterators"](https://github.com/bsobocki/Cpp_STL_Algorithms_Containers/blob/master/iterators/README.md#get-iterator) in [README.md](https://github.com/bsobocki/Cpp_STL_Algorithms_Containers/blob/master/iterators/README.md) in the folder named ["iterators"](https://github.com/bsobocki/Cpp_STL_Algorithms_Containers/tree/master/iterators).
 
 ## Capacity
 ### empty
