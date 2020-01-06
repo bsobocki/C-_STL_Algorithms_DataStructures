@@ -52,8 +52,6 @@ template <class T, std::size_t N> struct array;
   
 ## Get element
   
-...  
-  
 ### at  
 
 ```cpp 
@@ -65,7 +63,6 @@ Returns a reference to the element on the position **`pos`** *with bounds checki
 
 **Complexity:** O(1)
 
-...  
   
 ### indexing operator
 
@@ -77,7 +74,6 @@ Returns a reference to the element on position **`pos`** *without bounds checkin
 
 **Complexity:** O(1)
 
-...  
   
 ### front
 
@@ -105,7 +101,6 @@ Yes
 
 **Complexity:** O(1)
 
-...  
   
 ### back
 
@@ -135,7 +130,6 @@ Returns reference to the last element.
 
 **Complexity:** O(1)
 
-...  
 
 ## data  
   
@@ -148,7 +142,6 @@ If array is not empty, `.data()` returns pointer compares equal to the address o
 
 **Complexity:** O(1)
 
-...  
 
 ## Iterators
 
@@ -172,7 +165,6 @@ Output:
   6
   7
 ```  
-... 
 
 std::array has member functions that returns iterators: `begin()`, `end()`, `rbegin()`, `rend()`, `cbegin()`, `cend()`, `crbegin()`, `crend()`.  
 
