@@ -15,6 +15,20 @@ It is based on the content of the websites:  [cppreference - array](https://en.c
       * [back](#back)
     * [data](#data)
     * [Iterators](#iterators)
+    * [Capacity](#capacity)
+      * [empty](#empty)
+      * [size](#size)
+      * [max_size](#max_size)
+    * [Operations](#operations)
+      * [fill](#fill)
+      * [swap](#swap)
+  * [Non-Member Functions](#non-member-functions)
+    * [lexicographically compare](#lexicographically-compare)
+    * [get](#get)
+    * [swap](#swap)
+    * [to_array](#to_array)
+  * [Generator](#generator)
+    * [make_array](#make_array)
   
 ---  
 
@@ -246,3 +260,42 @@ Returns const reverse iterator to the first element of the reversed container.
 const_reverse_iterator crend() const noexcept;
 ```
 Returns const reverse iterator to the element following the last element of the reversed container.
+
+## Capacity
+### empty
+### size
+### max_size
+## Operations
+### fill 
+### swap
+# Non-Member Functions
+### lexicographically compare
+### get
+### swap
+### to_array
+# Generator
+### make_array
+
+**header:** *\<experimental/array\>*
+
+Creates a ***std::array*** whose size is equal to the number of arguments and whose elements are initialized from the corresponding arguments.
+
+Example from [cppreference](https://en.cppreference.com/w/cpp/experimental/make_array):
+```cpp
+#include <experimental/array>
+#include <iostream>
+#include <type_traits>
+ 
+int main()
+{
+    decltype(auto) arr = std::experimental::make_array(1, 2, 3, 4, 5);
+    bool is_array_of_5_ints = std::is_same<decltype(arr), std::array<int, 5>>::value;
+    std::cout << "Returns an array of five ints? ";
+    std::cout << std::boolalpha << is_array_of_5_ints << '\n';
+}
+```
+
+Output:
+```
+Returns an array of five ints? true
+```
