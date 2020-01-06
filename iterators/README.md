@@ -653,7 +653,72 @@ Constructs a new front_insert_iterator. See [front_insert_iterator](#front_inser
 Constructs a new move_iterator. See [move_iterator](#move_iterator).
 
 ## Get Iterator
+
 ### begin and end
+
+#### begin 
+  
+```cpp
+iterator begin() noexcept;
+```
+Returns an iterator to the first element.
+
+if the container is empty then arr.begin() == arr.end()
+
+#### end
+
+```cpp
+iterator end() noexcept;
+```
+Returns an iterator to the element following the last element.
+
 ### cbegin and cend
+
+#### cbegin
+
+```cpp
+const_iterator cbegin() const noexcept;
+```  
+Returns a const iterator to the first element.
+
+#### cend
+
+```cpp
+const_iterator cend() const noexcept;
+```
+Returns a const iterator to the element following the last element.
+
 ### rbegin and rend
+
+#### rbegin 
+  
+```cpp
+reverse_iterator rbegin() noexcept;
+```
+Returns an iterator to the first element of the reversed container.
+
+if the container is empty then arr.begin() == arr.end()
+
+#### rend
+
+```cpp
+reverse_iterator rend() noexcept;
+```
+Returns an iterator to the element following the last element of the reversed container.
+
 ### crbegin and crend
+
+
+#### crbegin
+
+```cpp
+const_reverse_iterator crbegin() const noexcept;
+```  
+Returns a const reverse iterator to the first element of the reversed container.
+
+#### crend
+
+```cpp
+const_reverse_iterator crend() const noexcept;
+```
+Returns a const reverse iterator to the element following the last element of the reversed container.
