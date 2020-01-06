@@ -593,22 +593,45 @@ alphabet : a b c d e f g h i j k l m n o p q r s t u v w x y z
 
 ### move_iterator
 
+*move_iterator* is an iterator adaptor, which can be used like underlying iterator (must be at least *LegacyInputIterator*) except that dereferencing converts the value returned by the underlying iterator into an rvalue.  
+
+If you use *move_iterator* as *input iterator* the values readed by the iterator will be moved from, rather than copied from.  
+
+
 ```cpp
-std::deque<char> deq1 = { 'h', 'i', '!', '_', 'm', 'y', '_', 'n', 'a', 'm', 'e', '_'};
-std::deque<char> deq2 = { 'i', 's', '_', 'b', 'a', 'r', 't', 'o', 's', 'z'};
+std::list<std::string> list1 = { "Hi!", " ","My", "name", "is", "Bartosz."};
+std::list<std::string> list2 = { " ", "Nice", "to", "meet", "you,", "friend"};
 
-std::copy ( std::make_move_iterator(deq2.begin()),
-            std::make_move_iterator(deq2.end()),
-            std::back_inserter(deq1));
+std::cout<<"Before std::copy with move_terators: "<<std::endl;
 
+std::cout<<"list1 = "; print(list1);
+std::cout<<std::endl;
+std::cout<<"list2 = "; print(list2);
 
-std::cout<<"deq1 = "; print(deq1);
-std::cout<<"deq2 = "; print(deq2);
+std::copy ( std::make_move_iterator(list2.begin()),
+            std::make_move_iterator(list2.end()),
+            std::back_inserter(list1) );
+
+std::cout<<std::endl<<std::endl;
+
+std::cout<<"After: "<<std::endl;
+
+std::cout<<"list1 = "; print(list1);
+std::cout<<std::endl;
+std::cout<<"list2 = "; print(list2);
+std::cout<<"// <- empty strings"<<std::endl;
 ```
 Output: 
 ```
-deq1 = { h i ! _ m y _ n a m e _ i s _ b a r t o s z } 
+Before std::copy with move_terators: 
+list1 = { Hi!   My name is Bartosz. }
+list2 = {   Nice to meet you, friend }
+
+After: 
+list1 = { Hi!   My name is Bartosz.   Nice to meet you, friend }
+list2 = {       } // <- empty strings
 ```
+
 ## Iterator Generators
 
 You can use iterators not only for get elements from the collection. They can also be used to push back or push front some elements to the container and to move elements.  
