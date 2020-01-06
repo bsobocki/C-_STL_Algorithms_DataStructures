@@ -174,7 +174,7 @@ Output:
 ```  
 ... 
 
-std::array has member functions returns iterators: `begin()`, `end()`, `rbegin()`, `rend()`, `cbegin()`, `cend()`, `crbegin()`, `crend()`.  
+std::array has member functions that returns iterators: `begin()`, `end()`, `rbegin()`, `rend()`, `cbegin()`, `cend()`, `crbegin()`, `crend()`.  
 
 For more informations about *Iterators* check ["Get iterators"](https://github.com/bsobocki/Cpp_STL_Algorithms_Containers/blob/master/iterators/README.md#get-iterator) in [README.md](https://github.com/bsobocki/Cpp_STL_Algorithms_Containers/blob/master/iterators/README.md) in the folder named ["iterators"](https://github.com/bsobocki/Cpp_STL_Algorithms_Containers/tree/master/iterators).
 
