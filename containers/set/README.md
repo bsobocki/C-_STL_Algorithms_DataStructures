@@ -44,36 +44,38 @@ class set;
 
 Container that store unique elements following specific order.
 
-Some Constructors:  
-   * *empty set* (default constructor)  
-      ```cpp
-      std::set<T> my_set;
-      ```
-   * *range* 
-      ```cpp
-      // arguments:
-      //  - iterator pointing to the first element of the range in 'container'
-      //  - iterator pointng to the last element of the range in 'container'
-      std::set<T> my_set( container.begin(), container.end() );
-      ```
-   * *copy* 
-      ```cpp
-      // lvalue as argument
-      std::set<T> ( my_set );
-      ```
-   * *copying assignment*
-      ```cpp
-      std::set<int> your_set = my_set;
-      ```
-   * *move* 
-      ```cpp
-      // rvalue as argument
-      std::set<T> ( std::set<T>(container.begin(), containser.end()) );
-      ```
-   * *initializer_list*
-      ```cpp
-      std::set<int> my_set {2, 13, 4, 2, 2, 2};  // my_set = {2, 4, 13};
-      ```
+Create set by:
+  * Some Constructors:  
+    * *empty set* (default constructor)  
+        ```cpp
+        std::set<T> my_set;
+        ```
+    * *range* 
+        ```cpp
+        // arguments:
+        //  - iterator pointing to the first element of the range in 'container'
+        //  - iterator pointng to the last element of the range in 'container'
+        std::set<T> my_set( container.begin(), container.end() );
+        ```
+     * *copy* 
+        ```cpp
+        // lvalue as argument
+        std::set<T> ( my_set );
+        ```
+     * *move* 
+        ```cpp
+        // rvalue as argument
+        std::set<T> ( std::set<T>(container.begin(), containser.end()) );
+        ```
+     * *initializer_list*
+        ```cpp
+        std::set<int> my_set {2, 13, 4, 2, 2, 2};  // my_set = {2, 4, 13};
+        ```
+  * Operator `=`:
+    * *copying assignment*
+        ```cpp
+        std::set<int> your_set = my_set;
+        ```
 
 ## Example Of Use
 
