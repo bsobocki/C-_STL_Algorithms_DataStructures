@@ -8,6 +8,8 @@ It is based on the content of the websites:  [cppreference - array](https://en.c
   * [Description](#description)
   * [Definition](#definition)  
   * [Member Functions](#member-functions)  
+    * [Some Constructors](#some-constructors)
+    * [Copying assignment](#copying-assignment)
     * [Get element](#get-element)
       * [at](#at)  
       * [indexing operator](#indexing-operator)  
@@ -48,7 +50,31 @@ template <class T, std::size_t N> struct array;
 ```
 # Member Functions  
   
-  
+## Some Constructors
+
+   * *empty*
+      ```cpp
+      std::array<T, 7> my_arr;
+      ```
+   * *initializer_list*
+      ```cpp
+      std::array<int, 5> your_arr{ {3, 2, 1, 4, 5} };
+      
+      std::array<int, 4> her_arr { 1, 3, 4, 5};
+      ```
+   * *copy constructor*
+      ```cpp
+      std::array<int, 5> our_array ( your_array );
+      ```
+      
+## Copying Assignment
+
+   * *copying assignment*
+      ```cpp
+      std::array<int, 8> their_array = his_array;
+      
+      std::array<int, 8> his_arr = {6, 3, 1, 8, 5, 9, 0, 2};
+      ```
   
 ## Get element
   
