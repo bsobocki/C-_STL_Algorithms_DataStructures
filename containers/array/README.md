@@ -250,7 +250,50 @@ How much elements does {0, 0, 0, 0, 0, 0, 0, 0, 0, 0} have?
 
 ## Operations
 ### fill 
+
+Assigns the value given as argument to each element;
+
+```cpp
+std::array<int, 10> arr{}; // {0, 0, 0, 0, 0, 0, 0, 0, 0, 0}
+std::cout<<"arr before 'fill(7)' : " << str(arr) << std::endl;
+
+arr.fill(7);
+
+std::cout<<"arr now : " << str(arr) << std::endl;
+```
+
+Output:
+```
+arr before 'fill(7)' : {0, 0, 0, 0, 0, 0, 0, 0, 0, 0}
+arr now : {7, 7, 7, 7, 7, 7, 7, 7, 7, 7}
+```
+
 ### swap
+
+Exchanges all values with the container given as argument.  
+Does not cause iterators and references to associate with the other container. 
+
+Example:
+```cpp
+std::array<int, 10> arr{}; // {0, 0, 0, 0, 0, 0, 0, 0, 0, 0}
+std::array<int, 10> arr2 = {3, 2, 4, 1, 4, 5, 4};
+std::cout<<"arr before swapping: " << str(arr) << std::endl;
+std::cout<<"arr2 before swapping: " << str(arr2) << std::endl;
+
+arr.swap(arr2);
+
+std::cout<<"arr now: " << str(arr) << std::endl;
+std::cout<<"arr2 now: " << str(arr2) << std::endl;
+```
+
+Output:
+```
+arr before swapping: {0, 0, 0, 0, 0, 0, 0, 0, 0, 0}
+arr2 before swapping: {3, 2, 4, 1, 4, 5, 4, 0, 0, 0}
+arr now: {3, 2, 4, 1, 4, 5, 4, 0, 0, 0}
+arr2 now: {0, 0, 0, 0, 0, 0, 0, 0, 0, 0}
+```
+
 # Non-Member Functions
 ### lexicographically compare
 ### get
