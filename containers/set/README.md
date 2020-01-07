@@ -60,12 +60,12 @@ auto set_int = make_set_copy<int>(vec); // {0, 1, 2, 3, 4, 5, 6, 9}
 std::cout<<"unique integers from 'vec' = "<<str(set_int)<<std::endl<<std::endl;
 
 std::vector<std::string> strings = {"siala", "baba", "mak", "nie", "wiedziala", "jak", "zatem", "baba", "nie", "zasiala"};
-std::cout<<"'strings' before 'make_set_move' ="<<str(strings)<<std::endl;
+std::cout<<"'strings' before 'make_set_move' = "<<str(strings)<<std::endl;
 
 auto set_str = make_set_move<std::string>(strings);
 std::cout<<"unique values from 'strings' = "<<str(set_str)<<std::endl;
 
-std::cout<<"\n'strings' after make_set_move ="<<str(strings);
+std::cout<<"\n'strings' after 'make_set_move' = "<<str(strings);
 std::cout<<"  // the repeated words weren't added, so they weren't moved by 'std::move_iterator'"<<std::endl;
 ```  
 Output:
@@ -73,8 +73,9 @@ Output:
 'vec' = {1, 1, 2, 2, 3, 4, 5, 6, 5, 9, 0, 2, 1, 3, 9}
 unique integers from 'vec' = {0, 1, 2, 3, 4, 5, 6, 9}
 
-'strings' before 'make_set_move' ={siala, baba, mak, nie, wiedziala, jak, zatem, baba, nie, zasiala}
+'strings' before 'make_set_move' = {siala, baba, mak, nie, wiedziala, jak, zatem, baba, nie, zasiala}
 unique values from 'strings' = {baba, jak, mak, nie, siala, wiedziala, zasiala, zatem}
 
-'strings' after 'make_set_move' ={, , , , , , , baba, nie, }  // the repeated words were not added, so they were not moved by 'std::move_iterator'
+'strings' after 'make_set_move' = {, , , , , , , baba, nie, }  // the repeated words weren't added, so they weren't moved by 'std::move_iterator'
+
 ```
