@@ -41,7 +41,36 @@ From ***`cppreference.com`*** we know, that unlike a C-style array, it doesn't d
 
 You can use it like normal C-style array (overloaded indexing operator "\[ \]"), with some features, like access to the size of the container, by calling mathod "size()"
 
+***Example of use***:
+```cpp
+std::array<int, 9> arr = {1, 2, 3, 4, 5, 6, 7, 8 ,9};
+
+std::cout<< "reversed arr = { ";
+// reverse the copy arr content to the ostream (print reversed arr)
+ std::reverse_copy(
+      arr.begin(), 
+      arr.end(), 
+      std::ostream_iterator<int>(std::cout, ", "));
+std::cout<< "}\n\n";
+      
+
+std::cout<< "arr = { ";
+// copy the arr content to the ostream (print arr)
+ std::reverse_copy(
+      arr.begin(), 
+      arr.end(), 
+      std::ostream_iterator<int>(std::cout, ", "));
+std::cout<< "}\n";
+```
+Output:
+```
+reversed arr = {9, 8, 7, 6, 5, 4, 3, 2, 1, }
+
+arr = {9 8 7 6 5 4 3 2 1 }
+```
+
 # Definition
+
 in header: ***\<array>***  
    
 ```cpp
