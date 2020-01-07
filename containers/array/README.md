@@ -19,8 +19,7 @@ It is based on the content of the websites:  [cppreference - array](https://en.c
     * [Iterators](#iterators)
     * [Capacity](#capacity)
       * [empty](#empty)
-      * [size](#size)
-      * [max_size](#max_size)
+      * [size and max_size](#size-and-max_size)
     * [Operations](#operations)
       * [fill](#fill)
       * [swap](#swap)
@@ -54,11 +53,11 @@ template <class T, std::size_t N> struct array;
 
    * *empty*
       ```cpp
-      std::array<T, 7> my_arr;
+      std::array<T, 7> my_arr; // {0, 0, 0, 0, 0, 0, 0}
       ```
    * *initializer_list*
       ```cpp
-      std::array<int, 5> your_arr{ {3, 2, 1, 4, 5} };
+      std::array<int, 10> your_arr{ {3, 2, 1, 4, 5} }; // {3, 2, 1, 4, 5, 0, 0, 0, 0, 0}
       
       std::array<int, 4> her_arr { 1, 3, 4, 5};
       ```
@@ -197,9 +196,58 @@ std::array has member functions that returns iterators: `begin()`, `end()`, `rbe
 For more informations about *Iterators* check ["Get iterators"](https://github.com/bsobocki/Cpp_STL_Algorithms_Containers/blob/master/iterators/README.md#get-iterator) in [README.md](https://github.com/bsobocki/Cpp_STL_Algorithms_Containers/blob/master/iterators/README.md) in the folder named ["iterators"](https://github.com/bsobocki/Cpp_STL_Algorithms_Containers/tree/master/iterators).
 
 ## Capacity
+
 ### empty
-### size
-### max_size
+
+Returns `true` if the array is empty and `false` otherwise.
+
+Example:
+```cpp
+std::array<int, 10> arr{ {3, 2, 1, 4, 5} }; // {3, 2, 1, 4, 5, 0, 0, 0, 0, 0}
+std::cout<< "Is " << str(arr) << " empty?" << std::endl;
+std::cout<< std::boolalpha << arr.empty() << std::endl;
+
+std::array<int, 10> arr2; // {0, 0, 0, 0, 0, 0, 0, 0, 0, 0}
+std::cout<< "Is " << str(arr2) << " empty?" << std::endl;
+std::cout<< std::boolalpha << arr2.empty() << std::endl;
+
+std::array<int, 0> ar;
+std::cout<< "Is " << str(ar) << " empty?" << std::endl;
+std::cout<< std::boolalpha << ar.empty() << std::endl;
+```
+Output:
+```
+Is {3, 2, 1, 4, 5, 0, 0, 0, 0, 0} empty?
+false
+Is {0, 0, 0, 0, 0, 0, 0, 0, 0, 0} empty?
+false
+Is {} empty?
+true
+```
+
+### size and max_size
+
+Returns size of element in the array.
+In this container type number of elements is constant, so the value returned by `max_size()` is equal to the value returned by `size()`; 
+
+```cpp
+std::array<int, 10> arr{}; // {0, 0, 0, 0, 0, 0, 0, 0, 0, 0}
+std::cout<<"How much elements does " << str(arr) << " have?" <<std::endl;
+std::cout<< arr.size() <<std::endl;
+
+std::array<int, 10> arr2; // {0, 0, 0, 0, 0, 0, 0, 0, 0, 0}
+std::cout<<"How much elements does " << str(arr2) << " have?" <<std::endl;
+std::cout<< arr2.max_size() <<std::endl;
+```
+
+Output:
+```
+How much elements does {0, 0, 0, 0, 0, 0, 0, 0, 0, 0} have?
+10
+How much elements does {0, 0, 0, 0, 0, 0, 0, 0, 0, 0} have?
+10
+```
+
 ## Operations
 ### fill 
 ### swap
