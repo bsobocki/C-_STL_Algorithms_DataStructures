@@ -61,6 +61,10 @@ Some Constructors:
       // lvalue as argument
       std::set<T> ( my_set );
       ```
+   * *copying assignment*
+      ```cpp
+      std::set<int> your_set = my_set;
+      ```
    * *move* 
       ```cpp
       // rvalue as argument
