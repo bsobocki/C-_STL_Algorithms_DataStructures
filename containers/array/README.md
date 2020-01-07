@@ -47,7 +47,7 @@ std::array<int, 9> arr = {1, 2, 3, 4, 5, 6, 7, 8 ,9};
 
 std::cout<< "reversed arr = { ";
 // reverse the copy arr content to the ostream (print reversed arr)
- std::reverse_copy(
+std::reverse_copy(
       arr.begin(), 
       arr.end(), 
       std::ostream_iterator<int>(std::cout, ", "));
@@ -56,7 +56,7 @@ std::cout<< "}\n\n";
 
 std::cout<< "arr = { ";
 // copy the arr content to the ostream (print arr)
- std::reverse_copy(
+std::reverse_copy(
       arr.begin(), 
       arr.end(), 
       std::ostream_iterator<int>(std::cout, ", "));
