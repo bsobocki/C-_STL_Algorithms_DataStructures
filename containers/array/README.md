@@ -325,6 +325,72 @@ arr2 now: {0, 0, 0, 0, 0, 0, 0, 0, 0, 0}
 
 # Non-Member Functions
 ### lexicographically compare
+
+To lexicographically compare two arrays you can use operators `==`, `!=`, `>=`, `<=`, `>`, `<`.
+
+Example:
+```cpp
+std::array<int, 9> arr = {1, 2, 3, 4, 5, 6, 7, 8 ,9};
+std::array<int, 9> arr2 = arr;
+
+std::next_permutation(arr2.begin(), arr2.end());
+
+std::cout<< "The next permutation of " << str(arr) << " \nis equal " <<str(arr2) << "." << std::endl;
+std::cout<< "Is arr lexicographically bigger than its next permutation in lexicographically ascending order? "<<std::endl;
+std::cout<< std::boolalpha << ( arr > arr2 ) << std::endl; 
+std::cout<< "Is it lower or equal?" << std::endl;
+std::cout<< std::boolalpha << ( arr <= arr2 ) << std::endl << std::endl; 
+
+
+std::array<int, 9> my_arr = {1, 2, 3, 4, 5, 6, 7, 9, 8};
+std::array<int, 9> your_arr = my_arr;
+
+std::prev_permutation(arr2.begin(), arr2.end());
+
+
+std::cout<< "The next permutation in lexicographically descending order of " << str(my_arr) << " \nis equal " << str(your_arr) << "." << std::endl;
+std::cout<< "Is my_arr lexicographically bigger or equal your_arr? "<<std::endl;
+std::cout<< std::boolalpha << ( my_arr >= your_arr ) << std::endl << std::endl; 
+
+std::array<int, 1> one = {1};
+std::array<int, 1> two = {2};
+
+std::cout<< "Is 'one' = " << str(one) << " lexicographically bigger than 'two' = " << str(two) << "? " << std::endl;
+std::cout<< std::boolalpha << ( one > two ) << std::endl;
+std::cout<< "Are they equal? "<< std::endl;
+std::cout<< std::boolalpha << ( one == two ) << std::endl;
+std::cout<< "Are they different? "<< std::endl;
+std::cout<< std::boolalpha << ( one != two ) << std::endl << std::endl;
+
+
+std::array<int, 4> four_zeros;
+std::array<int, 5> five_zeros;
+
+// std::cout<< std::boolalpha << ( four_zeros == five_zeros ) << std::endl; // ERROR: different sizes of arrays 
+// std::cout<< std::boolalpha << ( four_zeros != five_zeros ) << std::endl; // ERROR: different sizes of arrays
+```
+
+Output:
+```
+The next permutation of {1, 2, 3, 4, 5, 6, 7, 8, 9} 
+is equal {1, 2, 3, 4, 5, 6, 7, 9, 8}.
+Is arr lexicographically bigger than its next permutation in lexicographically ascending order? 
+false
+Is it lower or equal?
+true
+
+The next permutation in lexicographically descending order of {1, 2, 3, 4, 5, 6, 7, 9, 8} 
+is equal {1, 2, 3, 4, 5, 6, 7, 9, 8}.
+Is my_arr lexicographically bigger or equal your_arr? 
+true
+
+Is 'one' = {1} lexicographically bigger than 'two' = {2}? 
+false
+Are they equal? 
+false
+Are they different? 
+true
+```
 ### get
 ### swap
 ### to_array
