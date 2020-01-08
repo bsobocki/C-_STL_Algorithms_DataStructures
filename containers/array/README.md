@@ -392,6 +392,39 @@ Are they different?
 true
 ```
 ### get
+
+std::**get**<*pos*>(*arr*) returns reference to the value on the position `pos` in `arr`.  
+Returned value is `lvalue`, so you can use `std::get` with operator `=` (shown in the example below).
+
+```cpp
+std::array<int, 9> arr = {1, 2, 3, 4, 5, 6, 7, 8 ,9};
+int second = std::get<1>(arr); // std::get as rvalue
+
+std::cout<< "The second element of " << str(arr) << " : " << std::endl;
+std::cout<< std::get<1>(arr) << std::endl << std::endl;
+
+std::get<1>(arr) = 10; // std::get as lvalue
+
+std::cout<< "We can change it! Now it is 10!" << std::endl << std::endl; 
+std::cout<< "Am I right? Is it equal to 10?" << std::endl;
+std::cout<< std::boolalpha << ( std::get<1>(arr) == 10 ) << std::endl << std::endl;
+
+std::cout<< "'arr' = " << str(arr) << std::endl;
+```
+
+Output:
+```
+The second element of {1, 2, 3, 4, 5, 6, 7, 8, 9} : 
+2
+
+We can change it! Now it is 10!
+
+Am I right? Is it equal to 10?
+true
+
+'arr' = {1, 10, 3, 4, 5, 6, 7, 8, 9}
+```
+
 ### swap
 ### to_array
 # Generator
