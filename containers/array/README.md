@@ -25,9 +25,8 @@ It is based on the content of the websites:  [cppreference - array](https://en.c
       * [swap](#swap)
   * [Non-Member Functions](#non-member-functions)
     * [lexicographically compare](#lexicographically-compare)
-    * [get](#get)
-    * [swap](#swap)
-    * [to_array](#to_array)
+    * [std_get](#std_get)
+    * [std_swap](#std_swap)
   * [Generator](#generator)
     * [make_array](#make_array)
   
@@ -278,6 +277,7 @@ How much elements does {0, 0, 0, 0, 0, 0, 0, 0, 0, 0} have?
 ```
 
 ## Operations
+
 ### fill 
 
 Assigns the value given as argument to each element;
@@ -324,6 +324,7 @@ arr2 now: {0, 0, 0, 0, 0, 0, 0, 0, 0, 0}
 ```
 
 # Non-Member Functions
+
 ### lexicographically compare
 
 To lexicographically compare two arrays you can use operators `==`, `!=`, `>=`, `<=`, `>`, `<`.
@@ -391,7 +392,7 @@ false
 Are they different? 
 true
 ```
-### get
+### std_get
 
 std::**get**<*pos*>(*arr*) returns reference to the value on the position `pos` in `arr`.  
 Returned value is `lvalue`, so you can use `std::get` with operator `=` (shown in the example below).
@@ -425,9 +426,28 @@ true
 'arr' = {1, 10, 3, 4, 5, 6, 7, 8, 9}
 ```
 
-### swap
-### to_array
+### std_swap
+
+Swaps contents of two arrays like [arr.swap(arr2)](#swap).  
+
+```cpp
+std::array<int, 9> arr = {1, 2, 3, 4, 5, 6, 7, 8 ,9};
+std::array<int, 9> arr2 = {9, 8 , 7, 6, 5, 4, 3, 2, 1};
+
+std::swap(arr, arr2);
+
+std::cout<< "arr = " << str(arr) << std::endl;
+std::cout<< "arr2 = " << str(arr2) << std::endl;
+```
+
+Output:
+```
+arr = {9, 8, 7, 6, 5, 4, 3, 2, 1}
+arr2 = {1, 2, 3, 4, 5, 6, 7, 8, 9}
+```
+
 # Generator
+
 ### make_array
 
 **header:** *\<experimental/array\>*
