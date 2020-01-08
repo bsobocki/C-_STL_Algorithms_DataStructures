@@ -1,6 +1,6 @@
 # std::set
 
-The content of the document is based on informations from [cppreference.com](https://en.cppreference.com/w/cpp/container/set) and [cplusplus.com](http://www.cplusplus.com/reference/set/set/).
+The content of the document is based on informations from [cppreference.com](https://en.cppreference.com/w/cpp/container/set), [cplusplus.com](http://www.cplusplus.com/reference/set/set/) and [geeksforgeeks.com](https://www.geeksforgeeks.org/set-in-cpp-stl/).
 
 ## [Table Of Contents](#table-of-contents)
    * **[Declaration](#declaration)**
@@ -42,7 +42,8 @@ class set;
 
 ## Description
 
-Container that store unique elements following specific order.
+Type of associative container that store unique elements following specific order.  
+The value of the element once added cannot be modified, but can be removed from the container and added with modified value.
 
 Create set by:
   * Some Constructors:  
