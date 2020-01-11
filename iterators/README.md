@@ -21,7 +21,7 @@ This README.md file has been created based on information from [`cplusplus.com`]
     * **[back_insert_iterator](#back_insert_iterator)**
     * **[front_insert_iterator](#front_insert_iterator)**
     * **[move_iterator](#move_iterator)**
-    * **[ostream_iterator](#ostream-iterator)**
+    * **[ostream_iterator](#ostream_iterator)**
   * **[Iterator Generators](#iterator-generators)**
     * **[back_inserter](#back_inserter)**
     * **[front_inserter](#front_inserter)**
@@ -643,7 +643,17 @@ From **cplusplus.com**:
 > Optionally, a delimiter can be specified on construction. This delimiter is written to the stream after each element is inserted.
 >
 
+```cpp
+std::list<char> l = { 'h', 'e', 'l', 'l', 'o' };
 
+std::ostream_iterator<char> ostr_iter (std::cout,", "); // the separator = ", "
+
+std::copy(l.begin(), l.end(), ostr_iter); // copy data to the ostream "cout" using ostr_iter == print data
+```
+Output:
+```
+h, e, l, l, o, 
+```
 ## Iterator Generators
 
 You can use iterators not only for get elements from the collection. They can also be used to push back or push front some elements to the container and to move elements.  
