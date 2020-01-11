@@ -21,6 +21,7 @@ This README.md file has been created based on information from [`cplusplus.com`]
     * **[back_insert_iterator](#back_insert_iterator)**
     * **[front_insert_iterator](#front_insert_iterator)**
     * **[move_iterator](#move_iterator)**
+    * **[ostream_iterator](#output-iterator)**
   * **[Iterator Generators](#iterator-generators)**
     * **[back_inserter](#back_inserter)**
     * **[front_inserter](#front_inserter)**
@@ -631,6 +632,17 @@ After:
 list1 = { Hi!   My name is Bartosz.   Nice to meet you, friend }
 list2 = {       } // <- empty strings
 ```
+
+### ostream_iterator
+
+From **cplusplus.com**:
+> Ostream iterators are output iterators that write sequentially to an output stream (such as cout).
+>
+> They are constructed from a basic_ostream object, to which they become associated, so that whenever an assignment operator (=) is used on the ostream_iterator (dereferenced or not) it inserts a new element into the stream.
+>
+> Optionally, a delimiter can be specified on construction. This delimiter is written to the stream after each element is inserted.
+>
+
 
 ## Iterator Generators
 
