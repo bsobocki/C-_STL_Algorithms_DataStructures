@@ -21,7 +21,7 @@ This README.md file has been created based on information from [`cplusplus.com`]
     * **[back_insert_iterator](#back_insert_iterator)**
     * **[front_insert_iterator](#front_insert_iterator)**
     * **[move_iterator](#move_iterator)**
-    * **[ostream_iterator](#output-iterator)**
+    * **[ostream_iterator](#ostream-iterator)**
   * **[Iterator Generators](#iterator-generators)**
     * **[back_inserter](#back_inserter)**
     * **[front_inserter](#front_inserter)**
