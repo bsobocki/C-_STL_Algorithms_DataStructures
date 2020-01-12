@@ -1,6 +1,6 @@
 # [C++](https://www.geeksforgeeks.org/c-plus-plus/) [Standard Template Library (STL)](https://www.geeksforgeeks.org/the-c-standard-template-library-stl/)  
 
-Review of C ++ STL algorithms and containers with examples of use.  
+Review of C ++ STL with examples of use.  
 
 ***The repository contains descriptions for*** : 
   * ***Iterators***  
