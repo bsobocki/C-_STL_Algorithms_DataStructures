@@ -28,10 +28,10 @@ This README.md file has been created based on information from [`cplusplus.com`]
     * **[inserter](#inserter)**
     * **[make_move_iterator](#make_move_iterator)**
   * **[Get iterator](#get-iterator)**
-    * **[begin and end](#begin_and_end)**
-    * **[cbegin and cend](#cbegin_and_cend)**
-    * **[rbegin and rend](#rbegin_and_rend)**
-    * **[crbegin and crend](#crbegin_and_crend)**
+    * **[begin and end](#begin-and-end)**
+    * **[cbegin and cend](#cbegin-and-cend)**
+    * **[rbegin and rend](#rbegin-and-rend)**
+    * **[crbegin and crend](#crbegin-and-crend)**
 
 ## Description
 
