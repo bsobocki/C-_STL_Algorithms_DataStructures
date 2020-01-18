@@ -10,6 +10,11 @@ Review of C ++ STL with examples of use.
   * ***Containers*** 
     - ___array___
     - ___set___
+  * ***Smart Pointers*** 
+    - ___unique_ptr___
+    - ___shared_ptr___
+    - ___weak_ptr___
+    - ___auto_ptr___
 ```cpp
 /* I'm working on it! */
 ```
