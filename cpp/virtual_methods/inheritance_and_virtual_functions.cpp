@@ -85,7 +85,9 @@ int main(){
     B b;
     C c;
     D d;
-
+    
+    std::cout<< "Hello letters! Now You are speaking as object of the 'A' class!\n" <<std::endl;
+    
     std::cout << "\n- Hey C! Could you say hello ? Your member function 'say_hello' is not virtual!" << std::endl;
     intro(c);
 
@@ -102,6 +104,8 @@ int main(){
     speak(d);
 
     std::cout<<"\n- It's so sad :("<<std::endl;
+    
+    std::cout<< "- Now You are speaking as object of the 'C' class!\n" <<std::endl;
     
     std::cout<< "\n- D! You are class that parent is C! We know that C can speak slowly... Can you speak slowly?"<<std::endl;
     speak_slowly(d);
