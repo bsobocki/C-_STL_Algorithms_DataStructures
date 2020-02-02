@@ -29,7 +29,9 @@ class B : public A {
 };
 
 // you have to initialize static fields
-// outside main function 
+// outside main function and class definition
+// if the class definition is in *.hpp / *.h
+// you should initialize it into *.cpp file
 int A::A_objects_counter = 0;
 int B::B_objects_counter = 0;
 
