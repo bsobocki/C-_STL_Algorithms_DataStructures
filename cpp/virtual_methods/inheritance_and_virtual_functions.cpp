@@ -17,6 +17,7 @@ public:
     }
 };
 
+
 class B : public A {
 public: 
     virtual void say_hello() const{
@@ -27,6 +28,7 @@ public:
         std::cout<<"- B can also speak!"<<std::endl;
     }
 };
+
 
 class C : public B {
 public: 
@@ -45,6 +47,7 @@ public:
     }
 };
 
+
 class D : public C {
 public: 
     virtual void say_hello() const{
@@ -60,6 +63,7 @@ public:
     }
 };
 
+
 void intro(const A & obj){
     obj.say_hello();
 }
@@ -71,6 +75,11 @@ void speak(const A & obj){
 void speak_slowly(const C& obj){
     obj.speak_slowly();
 }
+
+void speak_as_b(const B& obj){
+    obj.say_something();
+}
+
 
 int main(){
     B b;
@@ -101,5 +110,13 @@ int main(){
     b.say_something();
     c.say_something();
     d.say_something();
+
+    std::cout<< "\n- Say something C as B!"<<std::endl;
+    speak_as_b(c);
+
+    std::cout<< "\n- Say something D as B!"<<std::endl;
+    speak_as_b(d);
+
+
     return 0;
 }
