@@ -1,16 +1,7 @@
 #include <set>
 #include <vector>
 #include <iostream>
-
-template<class Iterable>
-std::string to_string(Iterable it){
-    std::string str = "{ ";
-
-    for (auto x : it) 
-        str += std::to_string(x) + ", "; 
-    
-    return str + "}";
-}
+#include "iterable_to_string.hpp"
 
 int main(){
     std::vector<int> vec = {7,2,5,1,9,6,0};
