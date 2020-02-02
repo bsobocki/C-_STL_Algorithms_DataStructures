@@ -1,2 +1,2 @@
 collection = { 0, 0, 0, 0, 1, 1, 2, 3, 1, 4, 0, 4, 2, 6, 3, 56, 7, }
-unique values from collection = { 0, 1, 2, 3, 4, 6, 7, 56, }
+unique values from collection in O(N log N) time <-- insert operation is O(log N) = { 0, 1, 2, 3, 4, 6, 7, 56, }

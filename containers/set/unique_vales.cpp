@@ -8,7 +8,7 @@ int main(){
     std::cout << "collection = " << to_string(vec) << std::endl;
 
     std::set<int> set(vec.begin(), vec.end());
-    std::cout << "unique values from collection = " << to_string(set) << std::endl;
+    std::cout << "unique values from collection in O(N log N) time <-- insert operation is O(log N) = " << to_string(set) << std::endl;
 
     return 0;
 }
