@@ -80,7 +80,7 @@ Create set by:
 
 ## Example Of Use
 
-Function to print collections:
+Function to convert collections to std::string:
 ```cpp
 template <class Iterable>
 std::string str(const Iterable & coll){
