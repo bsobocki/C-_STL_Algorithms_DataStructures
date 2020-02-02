@@ -2,13 +2,16 @@
 
 struct A {
 public: 
-    // It's a vitrual member function
-    // so the derivated class will be able to say their words
-    // while using polymorphism
+    // It's a virtual member function 
+    // so the derived class will be able 
+    // to say their words while using polymorphism
     virtual void say_hello() const{
         std::cout<<"- Hi! I'm Struct A! Welcome in my world!"<<std::endl;
     }
 
+    // It's not a virtual member function
+    // so if we use polymirphism -  B as A
+    // it will call this method, so it will print "- HAHA, Only A can talk!"
     void say_something() const {
         std::cout<< "- HAHA, Only A can talk!"<<std::endl;
     }
@@ -35,7 +38,7 @@ public:
         std::cout<<"- C can also talk!"<<std::endl;
     }
 
-    // derivative classes will not be able to speak slowly
+    // derived classes will not be able to speak slowly
     // while using polymorphism
     void speak_slowly() const{
         std::cout<<"- O-n-l-y - C - c-l-a-s-s - c-a-n - d-o - i-t - w-h-i-l-e - u-s-i-n-g - p-o-l-y-m-o-r-p-h-i-s-m...!"<<std::endl;
