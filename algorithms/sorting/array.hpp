@@ -1,7 +1,7 @@
 #include <iostream>
 #include <array>
 #include <algorithm>
-#include "show_arr_vec.hpp"
+#include "../tools.hpp"
 
 #ifndef STL_STRUCTURES_ARRAY_HPP
 #define STL_STRUCTURES_ARRAY_HPP

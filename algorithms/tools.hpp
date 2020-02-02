@@ -1,5 +1,8 @@
-#ifndef STL_STRUCTURES_SHOW_ARR_VEC_HPP
-#define STL_STRUCTURES_SHOW_ARR_VEC_HPP
+#ifndef TOOLS_HPP
+#define TOOLS_HPP
+
+#include <iostream>
+#include <vector>
 
 void show(const int * const data, const int & size){
     std::cout<<" { ";
@@ -14,4 +17,14 @@ void show(const T & container){
     show(container.data(), container.size());
 }
 
-#endif //STL_STRUCTURES_SHOW_ARR_VEC_HPP
+template<class Iterable>
+std::string to_string(Iterable it){
+    std::string str = "{ ";
+
+    for (auto x : it) 
+        str += std::to_string(x) + ", "; 
+    
+    return str + "}";
+}
+
+#endif //TOOLS_HPP
