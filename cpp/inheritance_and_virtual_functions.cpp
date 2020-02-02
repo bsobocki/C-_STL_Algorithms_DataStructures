@@ -11,9 +11,9 @@ public:
 
     // It's not a virtual member function
     // so if we use polymirphism -  B as A
-    // it will call this method, so it will print "- HAHA, Only A can talk!"
+    // it will call this method, so it will print "- HAHA, Only A can speak!"
     void say_something() const {
-        std::cout<< "- HAHA, Only A can talk!"<<std::endl;
+        std::cout<< "- HAHA, Only A can speak!"<<std::endl;
     }
 };
 
@@ -24,7 +24,7 @@ public:
     }
 
     virtual void say_something() const{
-        std::cout<<"- B can also talk!"<<std::endl;
+        std::cout<<"- B can also speak!"<<std::endl;
     }
 };
 
@@ -35,7 +35,7 @@ public:
     }
 
     void say_something() const{
-        std::cout<<"- C can also talk!"<<std::endl;
+        std::cout<<"- C can also speak!"<<std::endl;
     }
 
     // derived classes will not be able to speak slowly
@@ -52,7 +52,7 @@ public:
     }
 
     void say_something() const{
-        std::cout<<"- D can also talk!"<<std::endl;
+        std::cout<<"- D can also speak!"<<std::endl;
     }
 
     void speak_slowly() const{
@@ -64,7 +64,7 @@ void intro(const A & obj){
     obj.say_hello();
 }
 
-void talk(const A & obj){
+void speak(const A & obj){
     obj.say_something();
 }
 
@@ -84,17 +84,22 @@ int main(){
     intro(b);
 
     std::cout<< "\n- Say something C! The 'say_something' method of your parent A is not virtual... It will be possible to use C::say_something() ?"<<std::endl;
-    talk(c);
+    speak(c);
 
     std::cout<< "\n- Say something B! The 'say_something' method of your parent A is not virtual, but yours is... It will be possible to use B::say_something() ?"<<std::endl;
-    talk(b);
+    speak(b);
     
     std::cout<< "\n- Say something D! The 'say_something' method of your parent A is not virtual, but yours too... May It will be possible to use D::say_something() ?"<<std::endl;
-    talk(d);
+    speak(d);
 
     std::cout<<"\n- It's so sad :("<<std::endl;
     
     std::cout<< "\n- D! You are class that parent is C! We know that C can speak slowly... Can you speak slowly?"<<std::endl;
     speak_slowly(d);
+
+    std::cout<< "\n- Okay.. But Letters.. Can you say something without use polymorphism?"<<std::endl;
+    b.say_something();
+    c.say_something();
+    d.say_something();
     return 0;
 }

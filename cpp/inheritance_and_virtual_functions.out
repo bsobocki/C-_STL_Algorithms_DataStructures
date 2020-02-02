@@ -18,3 +18,28 @@
 
 - D! You are class that parent is C! We know that C can speak slowly... Can you speak slowly?
 - O-n-l-y - C - c-l-a-s-s - c-a-n - d-o - i-t - w-h-i-l-e - u-s-i-n-g - p-o-l-y-m-o-r-p-h-i-s-m...!
+
+- Hey C! Could you say hello ? Your member function 'say_hello' is not virtual!
+- Hi everyone! I'm a little object C, my parent is B and I'm so proud of it.
+
+- And now B! Could you say hello? Your  member function 'say_hello' is virtual!
+- Hi! I'm Object B! Nice to meet you!
+
+- Say something C! The 'say_something' method of your parent A is not virtual... It will be possible to use C::say_something() ?
+- HAHA, Only A can talk!
+
+- Say something B! The 'say_something' method of your parent A is not virtual, but yours is... It will be possible to use B::say_something() ?
+- HAHA, Only A can talk!
+
+- Say something D! The 'say_something' method of your parent A is not virtual, but yours too... May It will be possible to use D::say_something() ?
+- HAHA, Only A can talk!
+
+- It's so sad :(
+
+- D! You are class that parent is C! We know that C can speak slowly... Can you speak slowly?
+- O-n-l-y - C - c-l-a-s-s - c-a-n - d-o - i-t - w-h-i-l-e - u-s-i-n-g - p-o-l-y-m-o-r-p-h-i-s-m...!
+
+- Okay.. But Letters.. Can you say something without use polymorphism?
+- B can also speak!
+- C can also speak!
+- D can also speak!
