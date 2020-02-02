@@ -1,0 +1,5 @@
+collection of integers: { 7, 2, 5, 1, 9, 6, 0, }
+
+sorting in O(N * log N ) time using std::set . . . 
+
+sorted collection of integers: { 0, 1, 2, 5, 6, 7, 9, }
