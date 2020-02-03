@@ -1,0 +1,20 @@
+ ---- copy ints ---- 
+vec1: { 3, 2, 1, 4, 3, 2, 1, 4, 3, 2, 1, }
+vec2: { 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, }
+copying data . . .
+vec2: { 3, 2, 1, 4, 3, 2, 1, 4, 3, 2, 1, }
+
+ ---- move std::strings ---- 
+vector1: { asd, adg, gasga, hjadikh, y23r83fh8, }
+vector2: { first, }
+moving data using std::copy . . .
+vector1: { , , , , , }
+vector2: { first, asd, adg, gasga, hjadikh, y23r83fh8, }
+
+
+ ---- print array using std::copy ---- 
+arr : abc10dl9
+
+ ---- std::copy_n ---- 
+list 1: { 74, 67, 7, 35, 42, 1, 9, 0, 0, 0, 4, 3, 2, 23, 42, }
+list 2 (first 5 elements): { 74, 67, 7, 35, 42, }

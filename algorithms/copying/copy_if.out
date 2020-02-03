@@ -1,0 +1,3 @@
+ ---- copy_if ----
+vector: { -42, 24, 24, -123, -155, 100, 1, }
+numbers from vector bigger than 0: { 24, 24, 100, 1, }
