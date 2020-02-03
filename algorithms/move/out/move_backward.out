@@ -1,0 +1,7 @@
+list: { first, second, third, fourth, fivth, sixth, seventh, eighth, }
+vec: { ninth, tenth, , , , , , , , , , , , }
+
+moving values . . .
+
+list: { , , , , , , , , }
+vec: { ninth, tenth, , , , first, second, third, fourth, fivth, sixth, seventh, eighth, }

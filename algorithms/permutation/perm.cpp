@@ -1,7 +1,7 @@
 #include <iostream>
 #include <algorithm>
 
-// prints collection with overloaded indexing operator
+// prints collection with indexing operator
 template <typename T>
 void print(T * arr, size_t size){
     std::cout<<"{ ";    
