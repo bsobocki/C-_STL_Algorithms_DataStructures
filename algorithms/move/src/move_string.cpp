@@ -1,4 +1,4 @@
-#include "../tools.hpp"
+#include "../../tools.hpp"
 
 int main(){
     std::vector<std::string> vec = {"kad", "fad", "mad", "uouo", "klio"};

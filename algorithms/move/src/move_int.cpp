@@ -1,4 +1,4 @@
-#include "../tools.hpp"
+#include "../../tools.hpp"
 
 int main(){
     std::vector<int> vec = {1, 2, 5, 1, 5, 6, 2, 7, 2};

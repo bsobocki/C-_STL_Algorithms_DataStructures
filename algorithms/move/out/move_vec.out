@@ -1,0 +1,6 @@
+vec: { 1, 3, 5, 7, 9, }
+
+moved vector . . .
+
+vec: { }
+moved: { 1, 3, 5, 7, 9, }
