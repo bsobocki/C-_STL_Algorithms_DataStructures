@@ -1,10 +1,10 @@
+#ifndef STL_STRUCTURES_ARRAY_HPP
+#define STL_STRUCTURES_ARRAY_HPP
+
 #include <iostream>
 #include <array>
 #include <algorithm>
 #include "../tools.hpp"
-
-#ifndef STL_STRUCTURES_ARRAY_HPP
-#define STL_STRUCTURES_ARRAY_HPP
 
 //template<std::size_t SIZE>
 //void show(std::array<int, SIZE>& array){
