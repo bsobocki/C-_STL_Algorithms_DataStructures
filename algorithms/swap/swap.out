@@ -1,0 +1,16 @@
+ ---- arrays ---- 
+floats1:  { 1.5, 0.7, 3.5, 6.2 }
+swap elements: first and third . . .
+floats1:  { 3.5, 0.7, 1.5, 6.2 }
+
+floats2:  { 0.1, 0.2, 0.3, 0.4 }
+swap float arrays: . . .
+floats1:  { 0.1, 0.2, 0.3, 0.4 }
+floats2:  { 3.5, 0.7, 1.5, 6.2 }
+
+ ---- vectors ---- 
+ints: { 1, 2, 3, 4, 5, }
+no_ints: { }
+swap vectors: . . .
+ints: { }
+no_ints: { 1, 2, 3, 4, 5, }
