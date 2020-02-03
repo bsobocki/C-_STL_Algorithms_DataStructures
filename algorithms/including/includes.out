@@ -1,0 +1,8 @@
+vec<char> = { a, b, c, p, m, j, a, m, a, i, c, a, }
+txt = { j, a, m, a, i, c, a, }
+
+sorted vec<char> = { a, a, a, a, b, c, c, i, j, m, m, p, }
+sorted txt = { a, a, a, c, i, j, m, }
+
+Does sorted 'vec<char>' includes sorted 'txt'?
+true

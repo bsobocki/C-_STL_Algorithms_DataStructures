@@ -1,4 +1,6 @@
 cd $1
 echo "run $2.cpp"
-g++ $2.cpp -o s && ./s > $2.out && rm s
+g++ $2.cpp -o s
 echo "creating file: $2.out in subfolder: $1"
+./s > $2.out && rm s
+echo "done"
