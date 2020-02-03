@@ -1,4 +1,4 @@
-read directory && read name
-cd $directory
-g++ $name.cpp -o s && ./s > $name.out && rm s
-echo done
+cd $1
+g++ $2.cpp -o s && ./s > $2.out && rm s
+echo "run $2.cpp
+creating file: $2.out in subfolder: $1"
