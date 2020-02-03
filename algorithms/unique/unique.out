@@ -1,0 +1,24 @@
+nums: { 1, 2, 3, 4, 5, 4, 3, 2, 1, }
+
+unique values from nums . . . 
+
+new vector: { 1, 2, 3, 4, 5, 4, 3, 2, 1, }
+
+resize nums based on the iterator returned by std::unique . . . 
+
+new vector: { 1, 2, 3, 4, 5, 4, 3, 2, 1, }
+
+
+
+Hmm okay... let's try it with the another vector 'vec'
+
+
+vec: { 1, 1, 1, 2, 2, 2, 3, 3, 3, 4, 4, 4, 5, 5, 5, 4, 4, 4, 5, 5, 5, 6, 6, 7, }
+
+unique values from vec . . . 
+
+new vector: { 1, 2, 3, 4, 5, 4, 5, 6, 7, 4, 4, 4, 5, 5, 5, 4, 4, 4, 5, 5, 5, 6, 6, 7, }
+
+resize vec based on the iterator returned by std::unique . . . 
+
+new vector: { 1, 2, 3, 4, 5, 4, 5, 6, 7, }
