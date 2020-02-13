@@ -6,18 +6,26 @@ struct Base {
     Base(){
         std::cout<< order++ <<": Constructor of the Base class"<<std::endl;
     }
+
+    ~Base(){
+        std::cout<< order++ <<": Destructor of the Base class" << std::endl;
+    }
 };
 
 struct Derived : public Base {
     Derived(){
-        std::cout<< order++ <<": The Derived Constructor"<<std::endl;
+        std::cout<< order++ <<": Constructor of the Derived class"<<std::endl;
+    }
+
+    ~Derived(){
+        std::cout<< order++ <<": Destructor of the Derived class" << std::endl;
     }
 };
 
 int main(){
 
-    Derived* d = new Derived;   // first -> "Constructor of the Base Class"
-                                // next  -> "The Derived Constructor"
+    Derived* d = new Derived;   // first -> "Constructor of the Base class"
+                                // next  -> "Constructor of the Derived class"
 
     return 0;
 }
