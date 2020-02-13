@@ -9,8 +9,8 @@ struct Base {
         std::cout<< order++ <<": Constructor of the Base class"<<std::endl;
     }
 
-    virtual ~Base(){
-        std::cout<< order++ <<": Virtual Destructor of the Base class" << std::endl;
+    ~Base(){
+        std::cout<< order++ <<": Non-Virtual Destructor of the Base class" << std::endl;
     }
 };
 
@@ -20,8 +20,8 @@ struct Derived : public Base {
         std::cout<< order++ <<": Constructor of the Derived class"<<std::endl;
     }
 
-    virtual ~Derived(){
-        std::cout<< order++ <<": Virtual Destructor of the Derived class" << std::endl;
+    ~Derived(){
+        std::cout<< order++ <<": Non-Virtual Destructor of the Derived class" << std::endl;
     }
 };
 
@@ -33,17 +33,14 @@ int main(){
     delete d;                   // first: -> "Virtual Destructor of the Derived class"
                                 // next:  -> "Virtual Destructor of the Base class"
 
+
     std::cout<<std::endl;
+
 
     Base* b = new Derived;      // first -> "Constructor of the Base class"
                                 // next  -> "Constructor of the Derived class"
 
     
-    delete b;                   // first: -> "Virtual Destructor of the Derived class"
-                                // next:  -> "Virtual Destructor of the Base class"
-
-/*
-    Derived* c = new Base;      // ERROR: cannot initialize Derived by Base
-*/
-
+    delete b;                   // first: -> "Non-Virtual Destructor of the Base class"
+                                // next:  -> nothing
 }
