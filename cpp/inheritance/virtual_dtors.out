@@ -1,9 +1,163 @@
+
+-----------------------------------
+
+---  Child* c = new Child;  ---
 0: Constructor of the Base class
 1: Constructor of the Derived class
-2: Virtual Destructor of the Derived class
-3: Virtual Destructor of the Base class
+2: Constructor of the Child class
 
-4: Constructor of the Base class
-5: Constructor of the Derived class
-6: Virtual Destructor of the Derived class
+---  c->~Base();  ---
+3: Virtual Destructor of the Child class
+4: Virtual Destructor of the Derived class
+5: Virtual Destructor of the Base class
+
+---  c->~Derived();  ---
+6: Virtual Destructor of the Base class
+
+---  c->~Child();  ---
 7: Virtual Destructor of the Base class
+
+---  delete c;  ---
+8: Virtual Destructor of the Base class
+
+-----------------------------------
+
+
+---  Child* c1 = new Child;  ---
+9: Constructor of the Base class
+10: Constructor of the Derived class
+11: Constructor of the Child class
+
+---  c1->~Derived();  ---
+12: Virtual Destructor of the Child class
+13: Virtual Destructor of the Derived class
+14: Virtual Destructor of the Base class
+
+---  c1->~Child();  ---
+15: Virtual Destructor of the Base class
+
+---  delete c;  ---
+16: Virtual Destructor of the Base class
+
+-----------------------------------
+
+
+---  Child* c2 = new Child;  ---
+17: Constructor of the Base class
+18: Constructor of the Derived class
+19: Constructor of the Child class
+
+---  delete c2;  ---
+20: Virtual Destructor of the Child class
+21: Virtual Destructor of the Derived class
+22: Virtual Destructor of the Base class
+
+-----------------------------------
+
+
+---  Derived* d = new Derived;  ---
+23: Constructor of the Base class
+24: Constructor of the Derived class
+
+---  d->~Base();  ---
+25: Virtual Destructor of the Derived class
+26: Virtual Destructor of the Base class
+
+---  d->~Derived();  ---
+27: Virtual Destructor of the Base class
+
+---  delete d;  ---
+28: Virtual Destructor of the Base class
+
+-----------------------------------
+
+
+---  Derived* d1 = new Derived;  ---
+29: Constructor of the Base class
+30: Constructor of the Derived class
+
+---  d1->~Derived();  ---
+31: Virtual Destructor of the Derived class
+32: Virtual Destructor of the Base class
+
+---  delete d1;  ---
+33: Virtual Destructor of the Base class
+
+-----------------------------------
+
+
+---  Derived* d2 = new Derived;  ---
+34: Constructor of the Base class
+35: Constructor of the Derived class
+
+---  delete d2;  ---
+36: Virtual Destructor of the Derived class
+37: Virtual Destructor of the Base class
+
+-----------------------------------
+
+
+---  Derived* der_child = new Child;  ---
+38: Constructor of the Base class
+39: Constructor of the Derived class
+40: Constructor of the Child class
+
+---  der_child->~Base();  ---
+41: Virtual Destructor of the Child class
+42: Virtual Destructor of the Derived class
+43: Virtual Destructor of the Base class
+
+---  der_child->~Derived();  ---
+44: Virtual Destructor of the Base class
+
+---  delete der_child;  ---
+45: Virtual Destructor of the Base class
+
+-----------------------------------
+
+
+---  Base* b = new Derived;  ---
+46: Constructor of the Base class
+47: Constructor of the Derived class
+
+---  b->~Base();  ---
+48: Virtual Destructor of the Derived class
+49: Virtual Destructor of the Base class
+
+---  delete b;  ---
+50: Virtual Destructor of the Base class
+
+-----------------------------------
+
+
+---  Base* b1 = new Derived;  ---
+51: Constructor of the Base class
+52: Constructor of the Derived class
+
+---  delete b1;  ---
+53: Virtual Destructor of the Derived class
+54: Virtual Destructor of the Base class
+
+-----------------------------------
+
+
+---  Base* base = new Base;  ---
+55: Constructor of the Base class
+
+---  base->~Base();  ---
+56: Virtual Destructor of the Base class
+
+---  delete base;  ---
+57: Virtual Destructor of the Base class
+
+-----------------------------------
+
+
+---  Base* base_child = new Child;  ---
+58: Constructor of the Base class
+
+---  base_child->~Base();  ---
+59: Virtual Destructor of the Base class
+
+---  delete base_child;  ---
+60: Virtual Destructor of the Base class

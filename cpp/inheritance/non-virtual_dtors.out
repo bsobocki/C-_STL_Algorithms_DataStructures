@@ -1,8 +1,169 @@
+
+-----------------------------------
+
+-----Child* c = new Child;-----
 0: Constructor of the Base class
 1: Constructor of the Derived class
-2: Non-Virtual Destructor of the Derived class
+2: Constructor of the Child class
+
+-----c->~Base();-----
 3: Non-Virtual Destructor of the Base class
 
-4: Constructor of the Base class
-5: Constructor of the Derived class
-6: Non-Virtual Destructor of the Base class
+-----c->~Derived();-----
+4: Non-Virtual Destructor of the Derived class
+5: Non-Virtual Destructor of the Base class
+
+-----c->~Child();-----
+6: Non-Virtual Destructor of the Child class
+7: Non-Virtual Destructor of the Derived class
+8: Non-Virtual Destructor of the Base class
+
+-----delete c;-----
+9: Non-Virtual Destructor of the Child class
+10: Non-Virtual Destructor of the Derived class
+11: Non-Virtual Destructor of the Base class
+
+-----------------------------------
+
+
+-----Child* c1 = new Child;-----
+12: Constructor of the Base class
+13: Constructor of the Derived class
+14: Constructor of the Child class
+
+-----c1->~Derived();-----
+15: Non-Virtual Destructor of the Derived class
+16: Non-Virtual Destructor of the Base class
+
+-----c1->~Child();-----
+17: Non-Virtual Destructor of the Child class
+18: Non-Virtual Destructor of the Derived class
+19: Non-Virtual Destructor of the Base class
+
+-----delete c;-----
+20: Non-Virtual Destructor of the Child class
+21: Non-Virtual Destructor of the Derived class
+22: Non-Virtual Destructor of the Base class
+
+-----------------------------------
+
+
+-----Child* c2 = new Child;-----
+23: Constructor of the Base class
+24: Constructor of the Derived class
+25: Constructor of the Child class
+
+-----delete c2;-----
+26: Non-Virtual Destructor of the Child class
+27: Non-Virtual Destructor of the Derived class
+28: Non-Virtual Destructor of the Base class
+
+-----------------------------------
+
+
+-----Derived* d = new Derived;-----
+29: Constructor of the Base class
+30: Constructor of the Derived class
+
+-----d->~Base();-----
+31: Non-Virtual Destructor of the Base class
+
+-----d->~Derived();-----
+32: Non-Virtual Destructor of the Derived class
+33: Non-Virtual Destructor of the Base class
+
+-----delete d;-----
+34: Non-Virtual Destructor of the Derived class
+35: Non-Virtual Destructor of the Base class
+
+-----------------------------------
+
+
+-----Derived* d1 = new Derived;-----
+36: Constructor of the Base class
+37: Constructor of the Derived class
+
+-----d1->~Derived();-----
+38: Non-Virtual Destructor of the Derived class
+39: Non-Virtual Destructor of the Base class
+
+-----delete d1;-----
+40: Non-Virtual Destructor of the Derived class
+41: Non-Virtual Destructor of the Base class
+
+-----------------------------------
+
+
+-----Derived* d2 = new Derived;-----
+42: Constructor of the Base class
+43: Constructor of the Derived class
+
+-----delete d2;-----
+44: Non-Virtual Destructor of the Derived class
+45: Non-Virtual Destructor of the Base class
+
+-----------------------------------
+
+
+-----Derived* der_child = new Child;-----
+46: Constructor of the Base class
+47: Constructor of the Derived class
+48: Constructor of the Child class
+
+-----der_child->~Base();-----
+49: Non-Virtual Destructor of the Base class
+
+-----der_child->~Derived();-----
+50: Non-Virtual Destructor of the Derived class
+51: Non-Virtual Destructor of the Base class
+
+-----delete der_child;-----
+52: Non-Virtual Destructor of the Derived class
+53: Non-Virtual Destructor of the Base class
+
+-----------------------------------
+
+
+-----Base* b = new Derived;-----
+54: Constructor of the Base class
+55: Constructor of the Derived class
+
+-----b->~Base();-----
+56: Non-Virtual Destructor of the Base class
+
+-----delete b;-----
+57: Non-Virtual Destructor of the Base class
+
+-----------------------------------
+
+
+-----Base* b1 = new Derived;-----
+58: Constructor of the Base class
+59: Constructor of the Derived class
+
+-----delete b1;-----
+60: Non-Virtual Destructor of the Base class
+
+-----------------------------------
+
+
+-----Base* base = new Base;-----
+61: Constructor of the Base class
+
+-----base->~Base();-----
+62: Non-Virtual Destructor of the Base class
+
+-----delete base;-----
+63: Non-Virtual Destructor of the Base class
+
+-----------------------------------
+
+
+-----Base* base_child = new Child;-----
+64: Constructor of the Base class
+
+-----base_child->~Base();-----
+65: Non-Virtual Destructor of the Base class
+
+-----delete base_child;-----
+66: Non-Virtual Destructor of the Base class

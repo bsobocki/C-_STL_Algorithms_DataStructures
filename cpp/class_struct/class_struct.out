@@ -1,0 +1,48 @@
+A_class : 
+  public_member: 3
+  protected_member: 2
+  private_member: 1
+
+A_struct : 
+  public_int: 30
+  protected_int: 20
+  private_int: 10
+
+ ----------------- 
+
+B_class_A_class : 
+  public_member: 3
+  protected_member: 2
+  private_member: no private_member (B_class_A_class doesn't have this field)
+
+ ----------------- 
+
+B_class_A_struct : 
+  public_int: 30
+  protected_int: 20
+  private_int: no private_int (B_class_A_struct doesn't have this field)
+
+ ----------------- 
+
+Derived Struct:
+A_class : 
+  public_member: 3
+  protected_member: 2
+  private_member: 1
+
+Access to public_member from B_struct_A_class in function main(): 3
+ ----------------- 
+
+Derived Struct:
+A_struct : 
+  public_int: 30
+  protected_int: 20
+  private_int: 10
+
+Access to public_int from B_struct_A_struct in function main(): 30
+
+
+Conclusion:
+ Whether inheritance is private or public depends on the derivative.
+ If it is struct - public inheritance
+ If it is class - private inheritance
