@@ -27,20 +27,13 @@ struct Derived : public Base {
 
 int main(){
 
-    Derived* d = new Derived;   // first -> "Constructor of the Base class"
-                                // next  -> "Constructor of the Derived class"
-    
-    delete d;                   // first: -> "Virtual Destructor of the Derived class"
-                                // next:  -> "Virtual Destructor of the Base class"
+    Derived* d = new Derived;  
+    delete d;                   
 
 
     std::cout<<std::endl;
 
 
-    Base* b = new Derived;      // first -> "Constructor of the Base class"
-                                // next  -> "Constructor of the Derived class"
-
-    
-    delete b;                   // first: -> "Non-Virtual Destructor of the Base class"
-                                // next:  -> nothing
+    Base* b = new Derived;     
+    delete b;                  
 }
