@@ -1,0 +1,41 @@
+---passing by value---
+(get the value once and use it in each time)
+
+a = 3
+b = 1
+
+foo_a_val = 3
+foo_b_val = 1
+
+a = 2
+b = 7
+
+foo_a_val = 3
+foo_b_val = 1
+
+a = 5
+b = 6
+
+foo_a_val = 3
+foo_b_val = 1
+
+---passing by reference---
+(get the reference of the variable and in each time get the value from the reference)
+
+a = 90
+b = 100
+
+foo_a_ref = 90
+foo_b_ref = 100
+
+a = 2
+b = 7
+
+foo_a_ref = 2
+foo_b_ref = 7
+
+a = 23
+b = 64
+
+foo_a_ref = 23
+foo_b_ref = 64

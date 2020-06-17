@@ -2,7 +2,7 @@
 #include <memory>
 
 class A_class{
-/*  without access specifier members are */
+/*  without an access specifier members are */
 //  private:
         int private_member = 1;
     protected:
@@ -40,7 +40,7 @@ struct A_struct{
 };
 
 
- // without specifier it is private inheritance
+ // without a specifier it is private inheritance
  // because derived is a class, not a struct 
  // so, no one knows that B_class_A_class inherits from A_class
  // polymorphism is unavailable
@@ -68,7 +68,7 @@ In this case the private inheritance behaves like:
         }
 };
 
- // without specifier it is private inheritance 
+ // without a specifier it is private inheritance 
  // because derived is a class, not a struct 
  // so, no one knows that B_class_A_struct inherits from A_struct
  // polymorphism is unavailable
